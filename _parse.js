@@ -2,7 +2,27 @@
 const fs = require('fs');
 const path = require('path');
 const basePath = path.join(__dirname, '..', '..');
-const {formatDate} = require('../../src/lib');
+
+function formatDate(d, format='long', time=false, locale='en-US') {
+  if (!d) d = Date.now();
+  d = new Date(d);
+
+  const formats = {
+    long: { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' },
+    long_month: { year: 'numeric', month: 'long', day: 'numeric'},
+    short: { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' },
+    short_month: { year: 'numeric', month: 'short', day: 'numeric' },
+    year: { year: 'numeric' },
+    month: { month: 'long' },
+    day: { day: 'long' }
+  };
+  const theDate = d.toLocaleDateString(locale, formats[format]);
+  const theTime = d.toLocaleTimeString(locale);
+
+  if (format === 'time') return theTime;
+
+  return !time ? theDate : `${theDate} - ${theTime}`;
+},
 
 class Parser {
   constructor(opts) {
