@@ -22,7 +22,7 @@ function formatDate(d, format='long', time=false, locale='en-US') {
   if (format === 'time') return theTime;
 
   return !time ? theDate : `${theDate} - ${theTime}`;
-},
+}
 
 class Parser {
   constructor(opts) {
