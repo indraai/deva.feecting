@@ -1,4 +1,6 @@
 // Copyright (c)2022 Quinn Michaels
+// The Feecting Deva
+
 const fs = require('fs');
 const path = require('path');
 
@@ -134,9 +136,6 @@ const FEECTING = new Deva({
         }
       });
     },
-    hash(packet) {
-      return this.hash(packet);
-    },
     /**************
     func: get
     params: url
@@ -158,15 +157,33 @@ const FEECTING = new Deva({
     }
   },
   methods: {
+    /**************
+    method: hash
+    params: packet
+    describe: Return hash from system function.
+    ***************/
     hash(packet) {
-      return this.func.hash(packet);
+      return this.hash(packet);
     },
+
+    /**************
+    method: read
+    params: packet
+    describe: Call the read function to read a feecting file
+    ***************/
     read(packet) {
       return this.func.read(packet.q.text)
     },
+
+    /**************
+    method: parse
+    params: packet
+    describe: Call the parse function for a string of text.
+    ***************/
     parse(packet) {
       return this.func.parse(packet);
     },
+
     /**************
     method: get
     params: packet.q.text
@@ -176,12 +193,30 @@ const FEECTING = new Deva({
       // in thsi method we call the web deva to get a url for us.
       return this.func.get(packet);
     },
+
+    /**************
+    method: uid
+    params: packet
+    describe: Return system unique id.
+    ***************/
     uid(packet) {
       return Promise.resolve(this.uid());
     },
+
+    /**************
+    method: status
+    params: packet
+    describe: Return Feecting Deva online status.
+    ***************/
     status(packet) {
       return this.status();
     },
+
+    /**************
+    method: help
+    params: packet
+    describe: Return the Feecting Deva Help files.
+    ***************/
     help(packet) {
       return new Promise((resolve, reject) => {
         this.lib.help(packet.q.text, __dirname).then(help => {
