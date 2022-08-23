@@ -20,7 +20,7 @@
     "url": "https://github.com/indraai/FeectingDeva/issues"
   },
   "dependencies": {
-    "@indra.ai/deva": "^1.0.25"
+    "@feecting/deva": "^1.0.25"
   },
   "homepage": "https://github.com/indraai/FeectingDeva#readme"
 }
