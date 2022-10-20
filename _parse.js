@@ -171,8 +171,13 @@ class Parser {
 
       .replace(/\n(a):\s?(.+)/gi, `<div class="article">$2</div>`)
       .replace(/\n(l):\s?(.+)/gi, `<div class="line">$2</div>`)
+
+      .replace(/\n(gate)\[(.+)\]:\s?(.+)/gi, `<$1><button class="btn speak" alt="Gateway" data-cmd="#gate send:$2 $3">💬</button> $3</$1>`)
+
       .replace(/\n(p|h1|h2|h3|h4|h5|article,div,span)\[speak\]:\s?(.+)/gi, `<$1><button class="btn speak" alt="Speak" data-cmd="#voice say $2">💬</button> $2</$1>`)
+
       .replace(/\n(p|h1|h2|h3|h4|h5|article)\[speak\:(.+)?]:\s?(.+)/gi, `<$1><button class="btn speak" alt="Speak" data-cmd="#voice say:$2 $3">💬</button> $3</$1>`)
+
       .replace(/\n(p|div|span|h1|h2|h3|h4|h5|article|section):\s?(.+)/gi, `<$1>$2</$1>`)
       .replace(/\n(\w+):\s?(.+)/gi, `<div class="item $1"><span class="label">$1</span><span class="value">$2</span></div>`)
       .trim();
