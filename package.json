@@ -1,6 +1,6 @@
 {
   "name": "@feecting/feectingdeva",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "The Feecting Deva",
   "main": "index.js",
   "scripts": {
