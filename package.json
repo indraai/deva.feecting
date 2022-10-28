@@ -1,5 +1,5 @@
 {
-  "name": "@feecting/feectingdeva",
+  "name": "@indra.ai/feectingdeva",
   "version": "0.0.10",
   "description": "The Feecting Deva",
   "main": "index.js",
@@ -20,7 +20,7 @@
     "url": "https://github.com/indraai/FeectingDeva/issues"
   },
   "dependencies": {
-    "@feecting/deva": "^1.0.25"
+    "@indra.ai/deva": "^1.0.25"
   },
   "homepage": "https://github.com/indraai/FeectingDeva#readme"
 }

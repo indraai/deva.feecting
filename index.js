@@ -7,7 +7,7 @@ const path = require('path');
 const data_path = path.join(__dirname, 'data.json');
 const {agent,vars} = require(data_path).data;
 
-const Deva = require('@feecting/deva');
+const Deva = require('@indra.ai/deva');
 const FEECTING = new Deva({
   agent: {
     uid: agent.uid,
