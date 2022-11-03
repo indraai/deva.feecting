@@ -90,7 +90,7 @@ class Parser {
       .replace(/\nimage:\s?(.+)/g, `<div class="image"><img src="$1" /></div>`)
       .replace(/\n(avatar|thumbnail):\s?(.+)/g, `<div class="$1"><img src="$2" /></div>`)
 
-      .replace(/\n?img:\s?(.+)\/(.+)\/(\d+)\/avatar/g, `<button class="btn avi" data-cmd="#adv $2:$1 $3/main:look"><img src="/asset/$1/$2/$3/avatar" /></button>`)
+      .replace(/\n?img:\s?(.+)\/(.+)\/(\d+)\/avatar/g, `<button class="btn avi" data-cmd="#space $2:$1 $3/main:look"><img src="/asset/$1/$2/$3/avatar" /></button>`)
       .replace(/\n?img:\s?(.+)/g, `<div class="image"><img src="/asset/$1" /></div>`)
 
       .replace(/\n(select)\[(.+):(.+)\]:(.+)/gi, `<div class="item $1"><span class="label" data-index="$2">$3</span><span class="input"><button type="button" class="input-select" name="$1" data-select="$2">$4</button></span></div>`)
