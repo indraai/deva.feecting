@@ -215,7 +215,7 @@ class Parser {
   _extractVars() {
     if (!this.text) return false;
     const id = this.uid();
-    const reggie = this.text.match(/\n?(\#|\@|\$)(.+)\s?=\s?(.+)/);
+    const reggie = this.text.match(/\n(\#|\@|\$)(.+)\s?=\s?(.+)/);
     if (!reggie) return;
 
     this.vars[reggie[2].trim()] = {
