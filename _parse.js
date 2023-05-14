@@ -55,7 +55,7 @@ class Parser {
       // main label formatting
 
       .replace(/\n::BEGIN:(.+)?/g, '<div class="CONTAINER $1">')
-      .replace(/\n::END:(.+)?/g, '</div>')
+      .replace(/\n::END:(.+)?:?(.+)?/g, '</div><hash data-name="$1" data-value="$2"/>')
 
       .replace(/\n?\s+?\/\/(.+)/g, '<div class="comment">$1</div>')
 
