@@ -54,16 +54,16 @@ class Parser {
     this.html = this.text
       // main label formatting
 
-      .replace(/\n::BEGIN:(.+)/g, '<div class="CONTAINER $1">')
-      .replace(/\n::END:(.+)/g, '</div>')
+      .replace(/\n::BEGIN:(.+)?/g, '<div class="CONTAINER $1">')
+      .replace(/\n::END:(.+)?/g, '</div>')
 
       .replace(/\n?\s+?\/\/(.+)/g, '<div class="comment">$1</div>')
 
       .replace(/(\n)(var):(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value">$3</span></div>`)
       .replace(/(\n)(var)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$3</span><span class="value">$4</span></div>`)
 
-      .replace(/::begin:(.+)/g, '<div class="box $1">')
-      .replace(/::end:(.+)/g, '</div>')
+      .replace(/::begin:(.+)?/g, '<div class="box $1">')
+      .replace(/::end:(.+)?/g, '</div>')
 
       .replace(/\n####\s(.+)/g, `<h4>$1</h4>`)
       .replace(/\n###\s(.+)/g, `<h3>$1</h3>`)
