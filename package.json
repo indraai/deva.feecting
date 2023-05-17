@@ -16,11 +16,12 @@
   ],
   "author": "Quinn Michaels",
   "license": "MIT",
+  "copyright": "2023",
   "bugs": {
     "url": "https://github.com/indraai/FeectingDeva/issues"
   },
   "dependencies": {
-    "@indra.ai/deva": "^1.1.2"
+    "@indra.ai/deva": "^1.1.20"
   },
   "homepage": "https://github.com/indraai/FeectingDeva#readme"
 }
