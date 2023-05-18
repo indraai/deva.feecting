@@ -232,12 +232,6 @@ const FEECTING = new Deva({
     }
   },
   onInit() {
-    console.log('USING LOCAL');
-    console.log('USING LOCAL');
-    console.log('USING LOCAL');
-    console.log('USING LOCAL');
-    console.log('USING LOCAL');
-    console.log('USING LOCAL');
     return this.start();
   },
 
