@@ -187,7 +187,7 @@ const FEECTING = new Deva({
     /**************
     method: get
     params: packet.q.text
-    describe: get a remoate feecting script using the web deva.
+    describe: get a remoate feecting script using the web Deva.
     ***************/
     get(packet) {
       return this.func.get(packet);
