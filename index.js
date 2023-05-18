@@ -220,7 +220,7 @@ const FEECTING = new Deva({
     help(packet) {
       return new Promise((resolve, reject) => {
         this.lib.help(packet.q.text, __dirname).then(help => {
-          return this.question(`!parse ${help}`);
+          return this.question(`/parse ${help}`);
         }).then(parsed => {
           return resolve({
             text: parsed.a.text,
@@ -231,5 +231,18 @@ const FEECTING = new Deva({
       });
     }
   },
+  onInit() {
+    console.log('USING LOCAL');
+    console.log('USING LOCAL');
+    console.log('USING LOCAL');
+    console.log('USING LOCAL');
+    console.log('USING LOCAL');
+    console.log('USING LOCAL');
+    return this.start();
+  },
+
+  onError(e) {
+    console.error(e);
+  }
 });
 module.exports = FEECTING
