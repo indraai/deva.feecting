@@ -190,7 +190,6 @@ const FEECTING = new Deva({
     describe: get a remoate feecting script using the web deva.
     ***************/
     get(packet) {
-      // in thsi method we call the web deva to get a url for us.
       return this.func.get(packet);
     },
 
