@@ -1,6 +1,6 @@
 {
   "name": "@indra.ai/feectingdeva",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "The Feecting Deva",
   "main": "index.js",
   "scripts": {
