@@ -12,8 +12,6 @@ const FEECTING = new Deva({
   agent: {
     id: agent.id,
     key: agent.key,
-    name: agent.name,
-    describe: agent.describe,
     prompt: agent.prompt,
     voice: agent.voice,
     profile: agent.profile,

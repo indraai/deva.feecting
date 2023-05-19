@@ -6,8 +6,6 @@
     "agent": {
       "id": 5461868899003,
       "key": "feecting",
-      "name": "@FeectingDeva",
-      "describe": "Feecting Deva for scripts",
       "prompt": {
         "emoji": "🐵",
         "text": "feecting",
@@ -29,11 +27,12 @@
         "speed": 1
       },
       "profile": {
+        "name": "@FeectingDeva",
+        "describe": "Feecting Deva for scripts",
         "emoji": "/public/devas/feecting/emoji.png",
         "avatar": "/public/devas/feecting/avatar.png",
         "background": "",
-        "describe": "Feecting Deva",
-        "gender": "M"
+        "gender": "deva"
       }
     },
     "vars": {
