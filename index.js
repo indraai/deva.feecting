@@ -208,7 +208,7 @@ const FEECTING = new Deva({
     describe: Return Feecting Deva online status.
     ***************/
     status(packet) {
-      return this.status();
+      return Promise.resolve(this.status());
     },
 
     /**************
