@@ -23,6 +23,7 @@ const parse = require('./_parse.js');
 
 const Deva = require('@indra.ai/deva');
 const FEECTING = new Deva({
+  info,
   agent: {
     id: agent.id,
     key: agent.key,

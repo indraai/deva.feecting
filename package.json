@@ -1,7 +1,10 @@
 {
   "name": "@indra.ai/feectingdeva",
   "version": "0.1.11",
+  "author": "Quinn Michaels",
+  "license": "MIT",
   "description": "The Feecting Deva",
+  "copyright": "2023",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,14 +17,11 @@
     "Feecting",
     "Deva"
   ],
-  "author": "Quinn Michaels",
-  "license": "MIT",
-  "copyright": "2023",
   "bugs": {
     "url": "https://github.com/indraai/FeectingDeva/issues"
   },
+  "homepage": "https://github.com/indraai/FeectingDeva#readme",
   "dependencies": {
     "@indra.ai/deva": "^1.1.41"
-  },
-  "homepage": "https://github.com/indraai/FeectingDeva#readme"
+  }
 }
