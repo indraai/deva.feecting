@@ -5,10 +5,10 @@
   "data": {
     "agent": {
       "id": 5461868899003,
-      "key": "feecting",
+      "key": "FeectingDeva",
       "prompt": {
         "emoji": "🐵",
-        "text": "feecting",
+        "text": "FeectingDeva",
         "colors": {
           "label": {
             "R": 255,
@@ -23,7 +23,7 @@
         }
       },
       "voice": {
-        "speech": "Alex",
+        "speech": "Brian",
         "speed": 1
       },
       "profile": {

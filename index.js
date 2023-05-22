@@ -4,8 +4,22 @@
 const fs = require('fs');
 const path = require('path');
 
+const package = require('./package.json');
+const info = {
+  name: package.name,
+  version: package.version,
+  author: package.author,
+  describe: package.describe,
+  url: package.homepage,
+  git: package.repository.url,
+  bugs: package.bugs.url,
+  license: package.license,
+  copyright: package.copyright
+};
+
 const data_path = path.join(__dirname, 'data.json');
 const {agent,vars} = require(data_path).data;
+const parse = require('./_parse.js');
 
 const Deva = require('@indra.ai/deva');
 const FEECTING = new Deva({
@@ -18,7 +32,7 @@ const FEECTING = new Deva({
     translate(input) {
       return input.trim();
     },
-    parse: require('./_parse.js'),
+    parse,
   },
   vars,
   deva: {},
@@ -208,7 +222,7 @@ const FEECTING = new Deva({
     describe: Return Feecting Deva online status.
     ***************/
     status(packet) {
-      return Promise.resolve(this.status());
+      return this.status();
     },
 
     /**************
@@ -230,12 +244,5 @@ const FEECTING = new Deva({
       });
     }
   },
-  onInit() {
-    return this.start();
-  },
-
-  onError(e) {
-    console.error(e);
-  }
 });
 module.exports = FEECTING
