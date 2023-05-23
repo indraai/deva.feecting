@@ -20,7 +20,6 @@ const info = {
 
 const data_path = path.join(__dirname, 'data.json');
 const {agent,vars} = require(data_path).data;
-const parse = require('./_parse.js');
 
 const Deva = require('@indra.ai/deva');
 const FEECTING = new Deva({
@@ -34,7 +33,7 @@ const FEECTING = new Deva({
     translate(input) {
       return input.trim();
     },
-    parse,
+    parse: require('./_parse.js'),
   },
   vars,
   deva: {},
