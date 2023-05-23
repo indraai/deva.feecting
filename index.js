@@ -6,15 +6,16 @@ const path = require('path');
 
 const package = require('./package.json');
 const info = {
+  id: package.id,
   name: package.name,
+  describe: package.description,
   version: package.version,
-  author: package.author,
-  describe: package.describe,
   url: package.homepage,
   git: package.repository.url,
   bugs: package.bugs.url,
+  author: package.author,
   license: package.license,
-  copyright: package.copyright
+  copyright: package.copyright,
 };
 
 const data_path = path.join(__dirname, 'data.json');
