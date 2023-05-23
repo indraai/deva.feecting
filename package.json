@@ -4,7 +4,7 @@
   "version": "0.1.13",
   "author": "Quinn Michaels",
   "license": "MIT",
-  "description": "The Feecting Deva manages all the parsing of feecting language files in deva.world.",
+  "description": "The Feecting Deva manages all the parsing of feecting language in deva.world.",
   "copyright": "2023",
   "main": "index.js",
   "scripts": {
