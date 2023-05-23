@@ -3,7 +3,7 @@
 p:Feecting is the META language that operates things. With it you can write scripts that can interact with the system on various levels.
 
 id: 5461868899003
-key: FeectingDeva
+key: feecting
 name: Feecting Deva
 describe: Parsing the feecting language for deva.world.
 
