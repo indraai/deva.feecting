@@ -51,7 +51,7 @@ const FEECTING = new Deva({
       return new Promise((resolve, reject) => {
         if (!opts) return reject('NO OPTS');
         if (!opts.q.text) return resolve(false);
-        const parsed = this.agent.parse(opts);
+        const parsed = this._agent.parse(opts);
         this.func.talk(parsed).then(talked => {
           return resolve(talked);
         }).catch(reject);
@@ -137,8 +137,8 @@ const FEECTING = new Deva({
             e.text = e.text.replace(/:id:/g, `#Q${id}`)
             this.talk(e.name, {
               id,
-              agent: this.agent,
-              client: this.client,
+              agent: this.agent(),
+              client: this.client(),
               text: e.text,
               created: Date.now(),
             })
@@ -159,7 +159,7 @@ const FEECTING = new Deva({
         this.question(`#web get ${opts.q.text}`).then(result => {
           opts.q.meta.url = opts.q.text;
           opts.q.text = result.a.text;
-          const parsed = this.agent.parse(opts);
+          const parsed = this._agent.parse(opts);
           return this.func.talk(parsed);
         }).then(talked  => {
           return resolve(talked);
@@ -194,7 +194,7 @@ const FEECTING = new Deva({
     describe: Call the parse function for a string of text.
     ***************/
     parse(packet) {
-      return this.func.parse(packet);
+      return this.func.parse(this.copy(packet));
     },
 
     /**************
@@ -223,7 +223,7 @@ const FEECTING = new Deva({
     describe: Return Feecting Deva online status.
     ***************/
     status(packet) {
-      return this.status();
+      return Promise.resolve(this.status());
     },
 
     /**************
