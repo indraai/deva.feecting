@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/indraai/FeectingDeva#readme",
   "dependencies": {
-    "@indra.ai/deva": "^1.1.41"
+    "@indra.ai/deva": "^1.1.45"
   }
 }
