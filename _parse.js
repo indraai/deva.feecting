@@ -238,8 +238,8 @@ class Parser {
     if (!this.text) return false;
     this.text = this.text.replace(/::id::/g, this.id)
                           .replace(/::date::/g, formatDate(Date.now(), 'long', true))
-                          .replace(/::agent_id::/g, this.client.id)
-                          .replace(/::agent_name::/g, this.client.profile.name)
+                          .replace(/::agent_id::/g, this.agent.id)
+                          .replace(/::agent_name::/g, this.agent.profile.name)
                           .replace(/::client_id::/g, this.client.id)
                           .replace(/::client_name::/g, this.client.profile.name);
     return this._extractVars();
