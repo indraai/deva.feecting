@@ -71,9 +71,9 @@ const FEECTING = new Deva({
       return new Promise((resolve, reject) => {
         if (!t) return reject('NO TALK');
         if (!t.data.talk.length) return resolve(t);
-        t.pending = this.lib.copy(t.data.talk);
+        t.pending = this.copy(t.data.talk);
         t.pending.complete = false;
-        this.vars.jobs[t.data.id] = this.lib.copy(t);
+        this.vars.jobs[t.data.id] = this.copy(t);
         this.prompt(`TALK > ${t.data.id}`);
         this.vars.talking = true;
         talker(t.data.id).then(job => {
@@ -109,7 +109,7 @@ const FEECTING = new Deva({
               const pidx = job.pending.findIndex(i => i.id === j.id);
               const pend = job.pending.splice(pidx, 1);
               if (!job.pending.length) {
-                const complete = this.lib.copy(job);
+                const complete = this.copy(job);
                 delete this.vars.jobs[jobid]; // delete job from jobs when done.
                 return resolve(complete);
               }
