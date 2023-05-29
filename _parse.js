@@ -55,7 +55,7 @@ class Parser {
       // main label formatting
 
       .replace(/\n::BEGIN:(.+)?/g, '<div class="CONTAINER $1">')
-      .replace(/\n::END:(.+)?:?(.+)?/g, '</div><hash data-name="$1" data-value="$2"/>')
+      .replace(/\n::END:(.+)?:?(.+)?/g, '</div>')
 
       .replace(/\n?\s+?\/\/(.+)/g, '<div class="comment">$1</div>')
 
@@ -79,10 +79,10 @@ class Parser {
       .replace(/(\n)-{2}\n/g, `$1<hr class="single medium"/>`)
       .replace(/(\n)-{1}\n/g, `$1<hr class="single large"/>`)
 
-      .replace(/(\s)(\#.+?)(\b)/g, `$1<span class="tag hash">$2</span>$3`)
-      .replace(/(\s)(\@.+?)(\b)/g, `$1<span class="tag mention">$2</span>$3`)
-      .replace(/(\s)(\$.+?)(\b)/g, `$1<span class="tag local">$2</span>$3`)
-      .replace(/(\s)(\!.+?)(\b)/g, `$1<span class="tag bang">$2</span>$3`)
+      .replace(/(\s)(\#.+?)(\b)/g, `$1<span class="tag thing">$2</span>$3`)
+      .replace(/(\s)(\@.+?)(\b)/g, `$1<span class="tag person">$2</span>$3`)
+      .replace(/(\s)(\$.+?)(\b)/g, `$1<span class="tag place">$2</span>$3`)
+      .replace(/(\s)(\!.+?)(\b)/g, `$1<span class="tag group">$2</span>$3`)
 
       .replace(/(\s)\_([#|@|$|!].+?)(\b)/gi, `$1$2$3`)
 
