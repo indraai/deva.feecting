@@ -54,7 +54,7 @@ class Parser {
     this.html = this.text
       // main label formatting
 
-      .replace(/\n::BEGIN:(\w+)?:?(\d+)?/g, '<!== id: $2 //-->\n<div class="CONTAINER $1" data-id="$2">')
+      .replace(/\n::BEGIN:(\w+)?:?(\d+)?/g, '<div class="CONTAINER $1" data-id="$2">')
       .replace(/\n::END:(\w+)?:?(md5|sha256|sha512)?:?(.+)?/g, '</div>')
 
       .replace(/\n?\s+?\/\/(.+)/g, '<div class="comment">$1</div>')
