@@ -194,7 +194,7 @@ class Parser {
     // Reference to https://github.com/sindresorhus/ansi-regex
     let cssStyle = []
     if (this.vars.bgcolor) cssStyle.push(`--browser-item-bgcolor:${this.vars.bgcolor.value}`);
-    if (this.vars.bg) cssStyle.push(`--browser-item-image: url(/asset/${this.vars.bg.value})`);
+    if (this.vars.bg) cssStyle.push(`--browser-item-image: url(${this.vars.bg.value})`);
     if (this.vars.color) cssStyle.push(`--browser-item-color: ${this.vars.color.value}`);
     if (this.vars.size) cssStyle.push(`--browser-item-size: ${this.vars.size.value}`);
 
@@ -240,6 +240,7 @@ class Parser {
                           .replace(/::date::/g, formatDate(Date.now(), 'long', true))
                           .replace(/::agent_id::/g, this.agent.id)
                           .replace(/::agent_name::/g, this.agent.profile.name)
+                          .replace(/::agent_background::/g, this.agent.profile.background)
                           .replace(/::client_id::/g, this.client.id)
                           .replace(/::client_name::/g, this.client.profile.name);
     return this._extractVars();
