@@ -74,7 +74,6 @@ const FEECTING = new Deva({
         t.pending = this.copy(t.data.talk);
         t.pending.complete = false;
         this.vars.jobs[t.data.id] = this.copy(t);
-        this.prompt(`TALK > ${t.data.id}`);
         this.vars.talking = true;
         talker(t.data.id).then(job => {
           return resolve(job);
@@ -97,7 +96,6 @@ const FEECTING = new Deva({
         }
         let timeout = 0
         job.data.talk.forEach(j => {
-          this.prompt(`TALKER > ${j.value}`);
           timeout = timeout + 10;
           setTimeout(() => {
             this.question(j.value).then(answer => {
