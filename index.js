@@ -29,7 +29,6 @@ const FEECTING = new Deva({
     id: agent.id,
     key: agent.key,
     prompt: agent.prompt,
-    voice: agent.voice,
     profile: agent.profile,
     translate(input) {
       return input.trim();
