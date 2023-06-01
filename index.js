@@ -3,6 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const needle = require('needle');
 
 const package = require('./package.json');
 const info = {
@@ -34,6 +35,9 @@ const FEECTING = new Deva({
       return input.trim();
     },
     parse: require('./_parse.js'),
+    process(input) {
+      return input.trim();
+    },
   },
   vars,
   deva: {},
@@ -47,6 +51,7 @@ const FEECTING = new Deva({
       describe:
     ***********/
     parse(opts) {
+      this.context('parse');
       opts.id = opts.id || this.uid();
       return new Promise((resolve, reject) => {
         if (!opts) return reject('NO OPTS');
@@ -66,6 +71,7 @@ const FEECTING = new Deva({
                 function next.
     ***********/
     talk(t) {
+      this.context('talk')
       const { talker} = this.func;
       // here we need to put the talk events into the local variables with push
       return new Promise((resolve, reject) => {
@@ -87,6 +93,7 @@ const FEECTING = new Deva({
       describe: talker object iterates through talk events in the pending array.
     ***********/
     talker(jobid) {
+      this.context('talker');
       return new Promise((resolve, reject) => {
         // now that we have a job let's run the talk events for that job.
         const job = this.vars.jobs[jobid];
@@ -154,7 +161,7 @@ const FEECTING = new Deva({
     ***************/
     get(opts) {
       return new Promise((resolve, reject) => {
-        this.question(`#web get ${opts.q.text}`).then(result => {
+        needle('get', opts.q.text).then(result => {
           opts.q.meta.url = opts.q.text;
           opts.q.text = result.a.text;
           const parsed = this._agent.parse(opts);
@@ -169,20 +176,12 @@ const FEECTING = new Deva({
   },
   methods: {
     /**************
-    method: hash
-    params: packet
-    describe: Return hash from system function.
-    ***************/
-    hash(packet) {
-      return this.hash(packet);
-    },
-
-    /**************
     method: read
     params: packet
     describe: Call the read function to read a feecting file
     ***************/
     read(packet) {
+      this.context('read');
       return this.func.read(packet.q.text)
     },
 
@@ -192,6 +191,7 @@ const FEECTING = new Deva({
     describe: Call the parse function for a string of text.
     ***************/
     parse(packet) {
+      this.context('parse');
       return this.func.parse(this.copy(packet));
     },
 
@@ -203,6 +203,7 @@ const FEECTING = new Deva({
     needle to get web requests.
     ***************/
     get(packet) {
+      this.context('get');
       return this.func.get(packet);
     },
 
@@ -212,6 +213,7 @@ const FEECTING = new Deva({
     describe: Return system unique id.
     ***************/
     uid(packet) {
+      this.context('uid');
       return Promise.resolve(this.uid());
     },
 
@@ -221,6 +223,7 @@ const FEECTING = new Deva({
     describe: Return Feecting Deva online status.
     ***************/
     status(packet) {
+      this.context('status');
       return Promise.resolve(this.status());
     },
 
@@ -230,8 +233,9 @@ const FEECTING = new Deva({
     describe: Return the Feecting Deva Help files.
     ***************/
     help(packet) {
+      this.context('help');
       return new Promise((resolve, reject) => {
-        this.lib.help(packet.q.text, __dirname).then(help => {
+        this.help(packet.q.text, __dirname).then(help => {
           return this.question(`/parse ${help}`);
         }).then(parsed => {
           return resolve({

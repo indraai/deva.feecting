@@ -30,5 +30,7 @@ p:Get the status of the feecting deva
 > #feecting help
 p:See the feecting help file
 
+copyright: (c)2023 Quinn Michaels
+
 #color = var(--color-orange)
 #bgcolor = var(--color-black)

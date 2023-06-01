@@ -47,7 +47,17 @@
         "text": "NEED TEXT"
       },
       "talking": false,
-      "jobs": {}
+      "jobs": {},
+      "context": {
+        "uid": "Feecting Deva getting uid",
+        "status": "Feecting Deva getting status",
+        "help": "Feecting Deva getting help",
+        "get": "Feecting Deva is getting some #feecting",
+        "parse": "Feecting Deva is parsing some #feecting",
+        "read": "Feecting Deva is reading some #feecting",
+        "talk": "Feecting Deva is collecting talk events",
+        "talker": "Feecting Deva is talking is events"
+      }
     }
   }
 }
