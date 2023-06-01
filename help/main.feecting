@@ -55,7 +55,10 @@ p: The `talker` function then takes the jobs that the `talk` function builds and
 param: opts - The optsions to request from
 p: The `get` function allows to get a #feecting file from a remote url.
 
-copyright: (c)2023 Quinn Michaels
+-
 
-#color = var(--color-orange)
-#bgcolor = var(--color-black)
+#color = ::agent_color::
+#bgcolor = ::agent_bgcolor::
+#bg = ::agent_background::
+
+copyright: (c)2023 Quinn Michaels
