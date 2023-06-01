@@ -124,36 +124,6 @@ const FEECTING = new Deva({
     },
 
     /**************
-    func: read
-    params: file
-    describe: read a local feecting file
-    ***************/
-    read(file=false) {
-      const id = this.uid();
-      if (!file) file = 'main';
-      file = file + '.feecting';
-      return new Promise((resolve, reject) => {
-        // now we want to get a feecting file
-        try {
-          const fct = path.join(__dirname, '..', '..', file);
-          const fctRead = this.lib.feecting(fs.readFileSync(fct, 'utf8'));
-          if (fctRead.events) fctRead.events.forEach(e => {
-            e.text = e.text.replace(/:id:/g, `#Q${id}`)
-            this.talk(e.name, {
-              id,
-              agent: this.agent(),
-              client: this.client(),
-              text: e.text,
-              created: Date.now(),
-            })
-          })
-          return resolve(fctRead.text);
-        } catch (e) {
-          return reject(e)
-        }
-      });
-    },
-    /**************
     func: get
     params: url
     describe: get the remote feecting script from the url.
@@ -162,11 +132,10 @@ const FEECTING = new Deva({
       return new Promise((resolve, reject) => {
         needle('get', opts.q.text).then(result => {
           opts.q.meta.url = opts.q.text;
-          opts.q.text = result.a.text;
-          const parsed = this._agent.parse(opts);
-          return this.func.talk(parsed);
-        }).then(talked  => {
-          return resolve(talked);
+          opts.q.text = result.data;
+          return this.func.parse(opts);
+        }).then(parsed  => {
+          return resolve(parse);
         }).catch(err => {
           return this.error(err,opts,reject);
         });
@@ -174,16 +143,6 @@ const FEECTING = new Deva({
     }
   },
   methods: {
-    /**************
-    method: read
-    params: packet
-    describe: Call the read function to read a feecting file
-    ***************/
-    read(packet) {
-      this.context('read');
-      return this.func.read(packet.q.text)
-    },
-
     /**************
     method: parse
     params: packet

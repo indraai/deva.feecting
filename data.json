@@ -22,17 +22,16 @@
           }
         }
       },
-      "voice": {
-        "speech": "Brian",
-        "speed": 1
-      },
       "profile": {
         "name": "Feecting Deva",
         "describe": "Feecting Deva for scripts",
         "emoji": "/public/devas/feecting/emoji.png",
         "avatar": "/public/devas/feecting/avatar.png",
         "background": "/public/devas/feecting/background.png",
-        "gender": "deva"
+        "color": "#fdff64",
+        "bgcolor": "#000000",
+        "gender": "deva",
+        "voice": "Brian"
       }
     },
     "vars": {

@@ -1,34 +1,59 @@
-## Feecting Deva
+image: ::agent_avatar::
+
+# Feecting Deva Help
 
 p:Feecting is the META language that operates things. With it you can write scripts that can interact with the system on various levels.
 
-id: 5461868899003
-key: feecting
-name: Feecting Deva
-describe: Parsing the feecting language for deva.world.
+id: ::agent_id::
+key: #::agent_key::
+name: ::agent_name::
+emoji: ::agent_emoji::
+describe: ::agent_describe::
 
-### Methods
 
-> #feecting hash
-p:Generate and return 0x hash codes from the core Deva module.
+## Methods
+p: The methods are accessable from a command in the prompt. Below you can see a short description and example on how to use each #feecting method.
 
-> #feecting read
-p:Read a feecting file and return it to the user.
-
-> #feecting parse *text string to parse*
+### 1. parse
 p:Parse a feecting file for output to the user.
+cmd:#feecting parse *text string to parse*
 
-> #feecting get *url*
-p:Get a feecting template from a remote url.
+### 2. get
+p:Get a #feecting template from a remote url.
+cmd: #feecting get *url*
 
-> #feecting uid
+### 3. uid
 p:Get a uid from the feecting Deva
+cmd: #feecting uid
 
-> #feecting status
+### status
 p:Get the status of the feecting deva
+cmd: #feecting status
 
-> #feecting help
+### help
+#feecting help
 p:See the feecting help file
+
+---
+
+## Functions
+p: The functions are used to provide internal functionality to the various methods that can be accessed by their respective command.
+
+### 1. parse(opts)
+param:  opts - The options to pass in for parsing
+p: The `parse` function handles running the `this._agent.parse()` function for parsing #feecting data.
+
+### 2. talk(t)
+param: t - The talk even to process
+p: The `talk` function is a location function to take the parsed data and look for any `talk` line items in the #feecting data.
+
+### 3. talker(jobid)
+param: jobid - The job id to process.
+p: The `talker` function then takes the jobs that the `talk` function builds and then asks the question from the talk line items.
+
+### 4. get(opts)
+param: opts - The optsions to request from
+p: The `get` function allows to get a #feecting file from a remote url.
 
 copyright: (c)2023 Quinn Michaels
 
