@@ -51,7 +51,6 @@ const FEECTING = new Deva({
       describe:
     ***********/
     parse(opts) {
-      this.context('parse');
       opts.id = opts.id || this.uid();
       return new Promise((resolve, reject) => {
         if (!opts) return reject('NO OPTS');

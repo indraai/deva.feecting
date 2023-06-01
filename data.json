@@ -31,7 +31,7 @@
         "describe": "Feecting Deva for scripts",
         "emoji": "/public/devas/feecting/emoji.png",
         "avatar": "/public/devas/feecting/avatar.png",
-        "background": "",
+        "background": "/public/devas/feecting/background.png",
         "gender": "deva"
       }
     },

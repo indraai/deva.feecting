@@ -236,10 +236,13 @@ class Parser {
   ***********/
   getVars() {
     if (!this.text) return false;
+    const {colors} = this.agent.prompt;
     this.text = this.text.replace(/::id::/g, this.id)
                           .replace(/::date::/g, formatDate(Date.now(), 'long', true))
                           .replace(/::agent_id::/g, this.agent.id)
                           .replace(/::agent_name::/g, this.agent.profile.name)
+                          .replace(/::agent_color::/g, this.agent.profile.color)
+                          .replace(/::agent_bgcolor::/g, this.agent.profile.bgcolor)
                           .replace(/::agent_background::/g, this.agent.profile.background)
                           .replace(/::client_id::/g, this.client.id)
                           .replace(/::client_name::/g, this.client.profile.name);
