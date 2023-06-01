@@ -246,7 +246,7 @@ class Parser {
                           .replace(/::agent_bgcolor::/g, this.agent.profile.bgcolor)
                           .replace(/::agent_describe::/g, this.agent.profile.describe)
                           .replace(/::agent_background::/g, this.agent.profile.background)
-                          .replace(/::agent_emoji::/g, this.agent.profile.emoji)
+                          .replace(/::agent_emoji::/g, this.agent.prompt.emoji)
                           .replace(/::agent_avatar::/g, this.agent.profile.avatar)
                           .replace(/::client_id::/g, this.client.id)
                           .replace(/::client_name::/g, this.client.profile.name);
