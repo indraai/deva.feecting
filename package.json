@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/indraai/FeectingDeva#readme",
   "dependencies": {
-    "@indra.ai/deva": "^1.1.117",
+    "@indra.ai/deva": "^1.1.118",
     "needle": "^3.2.0"
   }
 }
