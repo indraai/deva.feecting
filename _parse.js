@@ -202,6 +202,9 @@ class Parser {
       this.html = `<section class="cover" style="${cssStyle.join(';')}">${this.html}</section>`;
     }
     else {
+      this.html = `<section class="cover">${this.html}</section>`;      
+    }
+    else {
       this.html = `${this.html}`
     }
     return this.html;
