@@ -11,6 +11,7 @@ const info = {
   name: package.name,
   describe: package.description,
   version: package.version,
+  dir: __dirname,
   url: package.homepage,
   git: package.repository.url,
   bugs: package.bugs.url,
@@ -25,11 +26,9 @@ const {agent,vars} = require(data_path).data;
 const Deva = require('@indra.ai/deva');
 const FEECTING = new Deva({
   info,
-  agent: {
-    id: agent.id,
-    key: agent.key,
-    prompt: agent.prompt,
-    profile: agent.profile,
+  agent,
+  vars,
+  utils: {
     translate(input) {
       return input.trim();
     },
@@ -38,10 +37,6 @@ const FEECTING = new Deva({
       return input.trim();
     },
   },
-  vars,
-  deva: {},
-  listeners: {},
-  modules: {},
   func: {
 
     /***********
@@ -54,7 +49,7 @@ const FEECTING = new Deva({
       return new Promise((resolve, reject) => {
         if (!opts) return reject('NO OPTS');
         if (!opts.q.text) return resolve(false);
-        const parsed = this._agent.parse(opts);
+        const parsed = this.utils.parse(opts);
         this.func.talk(parsed).then(talked => {
           return resolve(talked);
         }).catch(reject);
@@ -163,46 +158,6 @@ const FEECTING = new Deva({
       this.context('get');
       return this.func.get(packet);
     },
-
-    /**************
-    method: uid
-    params: packet
-    describe: Return system unique id.
-    ***************/
-    uid(packet) {
-      this.context('uid');
-      return Promise.resolve(this.uid());
-    },
-
-    /**************
-    method: status
-    params: packet
-    describe: Return Feecting Deva online status.
-    ***************/
-    status(packet) {
-      this.context('status');
-      return Promise.resolve(this.status());
-    },
-
-    /**************
-    method: help
-    params: packet
-    describe: Return the Feecting Deva Help files.
-    ***************/
-    help(packet) {
-      this.context('help');
-      return new Promise((resolve, reject) => {
-        this.help(packet.q.text, __dirname).then(help => {
-          return this.question(`/parse ${help}`);
-        }).then(parsed => {
-          return resolve({
-            text: parsed.a.text,
-            html: parsed.a.html,
-            data: parsed.a.data,
-          });
-        }).catch(reject);
-      });
-    }
   },
 });
 module.exports = FEECTING
