@@ -202,7 +202,7 @@ class Parser {
       this.html = `<section class="cover" style="${cssStyle.join(';')}">${this.html}</section>`;
     }
     else {
-      this.html = `<section class="cover">${this.html}</section>`;
+      this.html = `<section class="insert">${this.html}</section>`;
     }
     return this.html;
   }
