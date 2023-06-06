@@ -93,20 +93,17 @@ class Parser {
       .replace(/\n?img:\s?(.+)\/(.+)\/(\d+)\/avatar/g, `<button class="btn avi" data-cmd="#space $2:$1 $3/main:look"><img src="/asset/$1/$2/$3/avatar" /></button>`)
       .replace(/\n?img:\s?(.+)/g, `<div class="image"><img src="/asset/$1" /></div>`)
 
-      .replace(/\n(select)\[(.+):(.+)\]:(.+)/gi, `<div class="item $1"><span class="label" data-index="$2">$3</span><span class="input"><button type="button" class="input-select" name="$1" data-select="$2">$4</button></span></div>`)
-      .replace(/(\n?)(menu)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-menu="$4">$3</button>')
+      .replace(/\n(cloudsel)\[(.+):(.+)\]:(.+)/gi, `<div class="item $1"><span class="label" data-index="$2">$3</span><span class="input"><button type="button" class="input-select" name="$1" data-cloudsel="$2">$4</button></span></div>`)
+      .replace(/(\n?)(cloudmnu)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-cloudmnu="$4">$3</button>')
       .replace(/(\n?)(confirm)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-mud="$4">$3</button>')
-      .replace(/(\n?)(bmud)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-bmud="$4">$3</button>')
-      .replace(/\n(mud)\[(.+)\]:(.+)/g, '<div class="mud-cmd"><button class="btn $1" title="$2" data-mud="$3">$2</button></div>')
+      .replace(/(\n?)(cloudbtn)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-cloudbtn="$4">$3</button>')
+      .replace(/\n(mud)\[(.+)\]:(.+)/g, '<div class="cloud-cmd"><button class="btn $1" title="$2" data-mud="$3">$2</button></div>')
 
       .replace(/(\n?)(button)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-button="$4">$3</button>')
 
       // cmd/tty tag parser
       .replace(/(\n)(cmd|tty):(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$3" data-$2="$3">$3</button></span></div>`)
       .replace(/(\n)(cmd|tty)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2 $4" data-$2="$4">$3</button></span></div>`)
-
-      .replace(/(\n?)(telnet):(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$3" data-cmd="#telnet open $3">$3</button></span></div>`)
-      .replace(/(\n?)(telnet)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$4" data-cmd="#telnet open:$3 $4">$4</button></span></div>`)
 
       .replace(/\n(\d+)\. (.+)/g, `<div class="number-item" data-label="$1">$2</div>`)
       .replace(/\n> (.+)\r?/g, `<div class="list-item">$1</div>`)
@@ -126,12 +123,6 @@ class Parser {
       // youtube links with parameters
       .replace(/(\n)(youtube)\[play\]:\s?(.+)/g, `\n<div class="center youtube-video-player"><iframe src="https://www.youtube.com/embed/$3?&autoplay=1" frameborder="0"></iframe></div>`)
 
-      // cspan links
-      .replace(/\ncspan:\s?(.+)/g, `\n<div class="center cspan"><iframe width=512 height=330 src='https://www.c-span.org/video/standalone/?$1' allowfullscreen='allowfullscreen' frameborder=0></iframe></div>`)
-
-      // archive embed
-      .replace(/\narchive:(.+)/g, `<div class="center archive"><iframe src="https://archive.org/embed/$1" width="560" height="384" frameborder="0" allowfullscreen></iframe></div>`)
-
       // links
       // link with just url
       .replace(/(\n?)(link):\s?(.+)/g, `$1<div class="item $2"><span class="label">link</span><span class="value"><a href="$3" class="$2" alt="$2" target="_blank">$3</a></span></div>`)
@@ -150,24 +141,10 @@ class Parser {
       // audio feature
       .replace(/(\n)(audio):\s?(.+)/g, `$1<div class="item $2"><span class="label">$1</span><span class="value"><audio class="$2-player" src="$3" controls></audio></span></div>`)
 
-      // wiki feature
-      .replace(/(\n)(wiki)\[(.+)\]:\s?(.+)/g, `$1<button class="btn $2" title="$4" data-button="#$2 summary $4"><i class="icn icn-document"></i>$3</button>`)
-
-      // look feature
-      .replace(/(\n)(look)\[(.+)\]:\s?(.+)/g, `$1<button class="btn $2" title="$4" data-bmud="$2 $4"><i class="icn icn-binoculars2"></i>$3</button>`)
-      // inline look button
-      .replace(/(\b)(look|read)\[(.+)\]/g, `$1<button class="btn $2-inline" title="$3" data-bmud="$2 $3">$3</button>`)
-
-      .replace(/\[PRESS RETURN\]/g, '<div class="press_return"><button class="btn return" title="Press Return" data-bmud="">Press Return</button><div>')
+      .replace(/\[PRESS RETURN\]/g, '<div class="press_return"><button class="btn return" title="Press Return" data-cloudbtn="">Press Return</button><div>')
 
       // note info formatting
       .replace(/(\n?)(note|info|thanks|warning|alert|greeting|extra):\s?(.*)/gi, `$1<div class="$2">$3</div>`)
-
-      // doc[*title*]:*link*
-      .replace(/\n?(docs)\[(.+)\]:(.+)/g, '<button class="btn $1" title="$2" data-doc="$3">$2</button>')
-
-      // cmd/tty tag parser
-
 
       .replace(/\n(a):\s?(.+)/gi, `<div class="article">$2</div>`)
       .replace(/\n(l):\s?(.+)/gi, `<div class="line">$2</div>`)
