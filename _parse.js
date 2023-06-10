@@ -63,7 +63,7 @@ class Parser {
       .replace(/(\n)(var)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$3</span><span class="value">$4</span></div>`)
 
       .replace(/::begin:(\w+)?:?(.+)?/g, '<div class="box $1" data-id="$2">')
-      .replace(/::end:(\w+)?:?(md5|sha256|sha512)?:?(.+)?/g, '</div>\n<!-- hash: $2-$3 //-->')
+      .replace(/::end:(\w+)?:?(md5|sha256|sha512)?-?(.+)?/g, '</div>')
 
       .replace(/\n####\s(.+)/g, `<h4>$1</h4>`)
       .replace(/\n###\s(.+)/g, `<h3>$1</h3>`)
@@ -93,11 +93,11 @@ class Parser {
       .replace(/\n?img:\s?(.+)\/(.+)\/(\d+)\/avatar/g, `<button class="btn avi" data-cmd="#space $2:$1 $3/main:look"><img src="/asset/$1/$2/$3/avatar" /></button>`)
       .replace(/\n?img:\s?(.+)/g, `<div class="image"><img src="/asset/$1" /></div>`)
 
-      .replace(/\n(cloudsel)\[(.+):(.+)\]:(.+)/gi, `<div class="item $1"><span class="label" data-index="$2">$3</span><span class="input"><button type="button" class="input-select" name="$1" data-cloudsel="$2">$4</button></span></div>`)
-      .replace(/(\n?)(cloudmnu)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-cloudmnu="$4">$3</button>')
-      .replace(/(\n?)(confirm)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-mud="$4">$3</button>')
-      .replace(/(\n?)(cloudbtn)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-cloudbtn="$4">$3</button>')
-      .replace(/\n(mud)\[(.+)\]:(.+)/g, '<div class="cloud-cmd"><button class="btn $1" title="$2" data-mud="$3">$2</button></div>')
+      .replace(/\n(select)\[(.+):(.+)\]:(.+)/gi, `<div class="item $1"><span class="label" data-index="$2">$3</span><span class="input"><button type="button" class="input-select" name="$1" data-cloud="$2">$4</button></span></div>`)
+      .replace(/(\n?)(cloudconf)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-cloud="$4">$3</button>')
+      .replace(/(\n?)(cloud)\[(.+)\]:(.+)/g, '$1<button class="btn cloudbtn" title="$3" data-cloudbtn="$4">$3</button>')
+      .replace(/(\n?)(cloudcmd)\[(.+)\]:(.+)/g, '$1<button class="btn cloudcmd" title="$3" data-cloudcmd="$4">$3</button>')
+      .replace(/(\n)?(look)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-cloud="look $4">$3</button>')
 
       .replace(/(\n?)(button)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-button="$4">$3</button>')
 
