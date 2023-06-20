@@ -93,11 +93,11 @@ class Parser {
       .replace(/\n?img:\s?(.+)\/(.+)\/(\d+)\/avatar/g, `<button class="btn avi" data-cmd="#space $2:$1 $3/main:look"><img src="/asset/$1/$2/$3/avatar" /></button>`)
       .replace(/\n?img:\s?(.+)/g, `<div class="image"><img src="/asset/$1" /></div>`)
 
-      .replace(/\n(select)\[(.+):(.+)\]:(.+)/gi, `<div class="item $1"><span class="label" data-index="$2">$3</span><span class="input"><button type="button" class="input-select" name="$1" data-cloud="$2">$4</button></span></div>`)
-      .replace(/(\n?)(cloudconf)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-cloud="$4">$3</button>')
+      .replace(/\n(select)\[(.+):(.+)\]:(.+)/gi, `<div class="item $1"><span class="label" data-index="$2">$3</span><span class="input"><button type="button" class="input-select" name="$1" data-cloudbtn="$2">$4</button></span></div>`)
+      .replace(/(\n?)(cloudconf)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-cloudbtn="$4">$3</button>')
       .replace(/(\n?)(cloud)\[(.+)\]:(.+)/g, '$1<button class="btn cloudbtn" title="$3" data-cloudbtn="$4">$3</button>')
       .replace(/(\n?)(cloudcmd)\[(.+)\]:(.+)/g, '$1<button class="btn cloudcmd" title="$3" data-cloudcmd="$4">$3</button>')
-      .replace(/(\n)?(look)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-cloud="look $4">$3</button>')
+      .replace(/(\n)?(look)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-cloudcmd="look $4">$3</button>')
 
       .replace(/(\n?)(button)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-button="$4">$3</button>')
 
