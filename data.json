@@ -48,14 +48,14 @@
       "talking": false,
       "jobs": {},
       "context": {
-        "uid": "Feecting Deva getting uid",
-        "status": "Feecting Deva getting status",
-        "help": "Feecting Deva getting help",
-        "get": "Feecting Deva is getting some #feecting",
-        "parse": "Feecting Deva is parsing some #feecting",
-        "read": "Feecting Deva is reading some #feecting",
-        "talk": "Feecting Deva is collecting talk events",
-        "talker": "Feecting Deva is talking is events"
+        "uid": "getting uid",
+        "status": "getting status",
+        "help": "getting help",
+        "get": "getting some #feecting",
+        "parse": "parsing some #feecting",
+        "read": "reading some #feecting",
+        "talk": "collecting talk events",
+        "talker": "talking is events"
       }
     }
   }
