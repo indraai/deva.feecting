@@ -129,7 +129,7 @@ const FEECTING = new Deva({
           opts.q.text = result.data;
           return this.func.parse(opts);
         }).then(parsed  => {
-          return resolve(parse);
+          return resolve(parsed);
         }).catch(err => {
           return this.error(err,opts,reject);
         });

@@ -157,6 +157,9 @@ class Parser {
 
       .replace(/\n(p|div|span|h1|h2|h3|h4|h5|article|section|br):\s?(.+)/gi, `<$1>$2</$1>`)
       .replace(/\n(\w+):\s?(.+)/gi, `<div class="item $1"><span class="label">$1</span><span class="value">$2</span></div>`)
+      .replace(/\n(\s{2})?(\w+):\s?(.+)/gi, `<div class="item $2 indent1"><span class="label">$2</span><span class="value">$3</span></div>`)
+      .replace(/\n(\s{4})?(\w+):\s?(.+)/gi, `<div class="item $2 indent2"><span class="label">$2</span><span class="value">$3</span></div>`)
+      .replace(/\n(\s{6})?(\w+):\s?(.+)/gi, `<div class="item $2 indent3"><span class="label">$2</span><span class="value">$3</span></div>`)
       .trim();
 
       // set the container
