@@ -82,7 +82,7 @@ class Parser {
       .replace(/(\s)(\#.+?)(\b)/g, `$1<span class="tag thing">$2</span>$3`)
       .replace(/(\s)(\@.+?)(\b)/g, `$1<span class="tag person">$2</span>$3`)
       .replace(/(\s)(\$.+?)(\b)/g, `$1<span class="tag place">$2</span>$3`)
-      .replace(/(\s)(\!.+?)(\b)/g, `$1<span class="tag group">$2</span>$3`)
+      .replace(/(\s)(\!.+?)(\b)/g, `$1<span class="tag bang">$2</span>$3`)
 
       .replace(/(\s)\_([#|@|$|!].+?)(\b)/gi, `$1$2$3`)
 
