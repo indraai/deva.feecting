@@ -50,12 +50,12 @@
       "context": {
         "uid": "getting uid",
         "status": "getting status",
-        "help": "getting help",
-        "get": "getting some #feecting",
-        "parse": "parsing some #feecting",
-        "read": "reading some #feecting",
-        "talk": "collecting talk events",
-        "talker": "talking is events"
+        "help": "Help",
+        "get": "Getting data",
+        "parse": "Parsing data",
+        "read": "Reading data",
+        "talk": "Collect talk events",
+        "talker": "Talking events"
       }
     }
   }
