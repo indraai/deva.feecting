@@ -155,7 +155,9 @@ class Parser {
 
       .replace(/\n(p|h1|h2|h3|h4|h5|article)\[speak\:(.+)?]:\s?(.+)/gi, `<$1><button class="btn speak" alt="Speak" data-cmd="#voice say:$2 $3">💬</button> $3</$1>`)
 
-      .replace(/\n(data)\[(.+)?]:\s?(.+)/gi, `<p><button class="btn data" alt="Data" data-cmd="#data $2 $3">🗯️</button> $3</p>`)
+      .replace(/\n(data)\[(.+)?]:\s?(.+)/gi, `<div class="box data"><p>$3</p><button class="btn data" alt="Data" data-cmd="#data $2 $3">$2</button></div>`)
+
+      .replace(/\n(live)\[(.+)]:\s?(.+)/gi, `<div class="box chat"><button class="btn chat" alt="Live Chat" data-cmd="#$2 $1 $3">💬</button> #$2 > $3</div>`)
 
       .replace(/\n(p|div|span|h1|h2|h3|h4|h5|article|section|br):\s?(.+)/gi, `<$1>$2</$1>`)
       .replace(/\n(\w+):\s?(.+)/gi, `<div class="item $1"><span class="label">$1</span><span class="value">$2</span></div>`)
@@ -174,7 +176,7 @@ class Parser {
       // .replace(/\n\r?/g, '<div class="line"></div>');
       // .replace(/(.*)/g, '<div class="line">$1</div>');
     // Reference to https://github.com/sindresorhus/ansi-regex
-    let cssStyle = []
+    let cssStyle = [];
     if (this.vars.bgcolor) cssStyle.push(`--browser-item-bgcolor:${this.vars.bgcolor.value}`);
     if (this.vars.bg) cssStyle.push(`--browser-item-image: url(${this.vars.bg.value})`);
     if (this.vars.color) cssStyle.push(`--browser-item-color: ${this.vars.color.value}`);
