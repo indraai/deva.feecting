@@ -1,8 +1,6 @@
 // Copyright (c)2023 Quinn Michaels
 // The Feecting Deva
 
-const fs = require('fs');
-const path = require('path');
 const needle = require('needle');
 
 const package = require('./package.json');
@@ -20,8 +18,7 @@ const info = {
   copyright: package.copyright,
 };
 
-const data_path = path.join(__dirname, 'data.json');
-const {agent,vars} = require(data_path).data;
+const {agent,vars} = require('./data.json').DATA;
 
 const Deva = require('@indra.ai/deva');
 const FEECTING = new Deva({
@@ -40,41 +37,23 @@ const FEECTING = new Deva({
   func: {
 
     /***********
-      func: parse
-      params: opts - the options to pass in for parsing.
-      describe:
-    ***********/
-    parse(opts) {
-      opts.id = opts.id || this.uid();
-      return new Promise((resolve, reject) => {
-        if (!opts) return reject('NO OPTS');
-        if (!opts.q.text) return resolve(false);
-        const parsed = this.utils.parse(opts);
-        this.func.talk(parsed).then(talked => {
-          return resolve(talked);
-        }).catch(reject);
-      });
-    },
-
-    /***********
       func: talk
       params: j - the talk events to process
       describe: the talk function takes parsed data and looks for any talk
                 events to speak. If there are talk events it calls the talker
                 function next.
     ***********/
-    talk(t) {
-      this.context('talk')
-      const { talker} = this.func;
+    tasks(t) {
+      this.action('func', 'tasks');
       // here we need to put the talk events into the local variables with push
       return new Promise((resolve, reject) => {
-        if (!t) return reject('NO TALK');
+        if (!t) return reject(this.vars.messages.no_tasks);
         if (!t.data.talk.length) return resolve(t);
         t.pending = this.copy(t.data.talk);
         t.pending.complete = false;
         this.vars.jobs[t.data.id] = this.copy(t);
         this.vars.talking = true;
-        talker(t.data.id).then(job => {
+        this.func.processor(t.data.id).then(job => {
           return resolve(job);
         }).catch(reject);
       });
@@ -85,8 +64,8 @@ const FEECTING = new Deva({
       params: jobid - the job id to work
       describe: talker object iterates through talk events in the pending array.
     ***********/
-    talker(jobid) {
-      this.context('talker');
+    processor(jobid) {
+      this.action('func', 'processor');
       return new Promise((resolve, reject) => {
         // now that we have a job let's run the talk events for that job.
         const job = this.vars.jobs[jobid];
@@ -123,10 +102,11 @@ const FEECTING = new Deva({
     describe: get the remote feecting script from the url.
     ***************/
     get(opts) {
+      this.action('func', 'get');
       return new Promise((resolve, reject) => {
         needle('get', opts.q.text).then(result => {
           opts.q.meta.url = opts.q.text;
-          opts.q.text = result.data;
+          opts.q.text = result.body;
           return this.func.parse(opts);
         }).then(parsed  => {
           return resolve(parsed);
@@ -143,8 +123,17 @@ const FEECTING = new Deva({
     describe: Call the parse function for a string of text.
     ***************/
     parse(packet) {
-      this.context('parse');
-      return this.func.parse(this.copy(packet));
+      this.action('method', 'parse');
+      return new Promise((resolve, reject) => {
+        if (!packet) return resolve(this._messages.nopacket);
+        if (!packet.q.text) return resolve(this._messages.nopacket);
+        const parsed = this.utils.parse(this.copy(packet));
+        this.func.tasks(parsed).then(t => {
+          return resolve(t);
+        }).catch(err => {
+          return this.error(err, packet, reject);
+        })
+      });
     },
 
     /**************
@@ -159,5 +148,8 @@ const FEECTING = new Deva({
       return this.func.get(packet);
     },
   },
+  onError(err) {
+    console.log('FEECTING ERROR', err);
+  }
 });
 module.exports = FEECTING

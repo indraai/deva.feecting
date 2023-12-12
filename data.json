@@ -2,13 +2,13 @@
   "name": "Feecting Deva Data File",
   "describe": "The main Data file for Feecting Deva",
   "copyright": "Copyright (c)2023 Quinn Michaels. All rights reserved.",
-  "data": {
+  "DATA": {
     "agent": {
       "id": 5461868899003,
       "key": "feecting",
       "prompt": {
         "emoji": "🐵",
-        "text": "feecting",
+        "text": "Feecting",
         "colors": {
           "label": {
             "R": 255,
@@ -23,15 +23,32 @@
         }
       },
       "profile": {
+        "identity": "You are #FeectingDEVA in deva.world.",
+        "invoke": "#FeectingDEVA of deva.world",
         "name": "Feecting Deva",
-        "describe": "Feecting Deva for scripts",
+        "mention": "@FeectingDEVA",
+        "tags": "#FeectingDEVA #DevaWorld",
+        "pronouns": "Deva",
+        "creator": "Quinn Michaels",
+        "created": "August 21, 2022 at 2:19 AM",
+        "house": "House Deva",
+        "temple": "Kedarnath Temple (Vadari)",
+        "forest": "Pushkara",
+        "city": "Amaravati",
+        "region": "Svarga",
+        "land": "Visisipra",
+        "planet": "Arjika",
+        "loka": "Devaloka",
+        "verse": "Rikverse",
+        "system": "deva.world",
+        "describe": "#FeectingDEVA is responsible for parsing, compiling, and presenting the feecting scripts in various formats and styles. #FeectingDEVA parses our feecting meta-language that allows clients and agents to cross communicate with a line label, container focused, meta programming language developed specificially for deva.world.",
         "emoji": "/public/devas/feecting/emoji.png",
         "avatar": "/public/devas/feecting/avatar.png",
         "background": "/public/devas/feecting/background.png",
         "color": "#fdff64",
         "bgcolor": "#000000",
         "gender": "deva",
-        "voice": "Brian"
+        "voice": "onyx"
       }
     },
     "vars": {
@@ -43,10 +60,37 @@
         "exit": "🟡 EXIT",
         "done": "🟣 DONE",
         "error": "💣 ERROR!",
-        "text": "NEED TEXT"
+        "text": "NEED TEXT",
+        "no_tasks": "NO TASKS"
       },
       "talking": false,
       "jobs": {},
+      "live": {
+        "profile": "deva",
+        "max_tokens": 50,
+        "words": 25,
+        "history": []
+      },
+      "ask": {
+        "max_tokens": 500,
+        "words": 200,
+        "history": []
+      },
+      "reply": {
+        "profile": "deva",
+        "max_tokens": 300,
+        "words": 100,
+        "history": []
+      },
+      "comment": {
+        "profile": "deva",
+        "max_tokens": 300,
+        "words": 100,
+        "history": []
+      },
+      "art": {
+        "history": []
+      },
       "context": {
         "uid": "getting uid",
         "status": "getting status",
@@ -55,7 +99,8 @@
         "parse": "Parsing data",
         "read": "Reading data",
         "talk": "Collect talk events",
-        "talker": "Talking events"
+        "talker": "Talking events",
+        "finish": "Finished"
       }
     }
   }

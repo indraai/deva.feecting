@@ -79,12 +79,12 @@ class Parser {
       .replace(/(\n)-{2}\n/g, `$1<hr class="single medium"/>`)
       .replace(/(\n)-{1}\n/g, `$1<hr class="single large"/>`)
 
-      .replace(/(\s)(\#.+?)(\b)/g, `$1<span class="tag thing">$2</span>$3`)
-      .replace(/(\s)(\@.+?)(\b)/g, `$1<span class="tag person">$2</span>$3`)
-      .replace(/(\s)(\$.+?)(\b)/g, `$1<span class="tag place">$2</span>$3`)
-      .replace(/(\s)(\!.+?)(\b)/g, `$1<span class="tag bang">$2</span>$3`)
-
-      .replace(/(\s)\_([#|@|$|!].+?)(\b)/gi, `$1$2$3`)
+      // .replace(/(\s)(\#.+?)(\b)/g, `$1<span class="tag thing">$2</span>$3`)
+      // .replace(/(\s)(\@.+?)(\b)/g, `$1<span class="tag person">$2</span>$3`)
+      // .replace(/(\s)(\$.+?)(\b)/g, `$1<span class="tag place">$2</span>$3`)
+      // .replace(/(\s)(\!.+?)(\b)/g, `$1<span class="tag bang">$2</span>$3`)
+      //
+      // .replace(/(\s)\_([#|@|$|!].+?)(\b)/gi, `$1$2$3`)
 
       // image processing regex
       .replace(/\nimage:\s?(.+)/g, `<div class="image"><img src="$1" /></div>`)
@@ -102,7 +102,7 @@ class Parser {
       .replace(/(\n?)(button)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-button="$4">$3</button>')
 
       // cmd/tty tag parser
-      .replace(/(\n)(cmd|tty):(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$3" data-$2="$3">$3</button></span></div>`)
+      .replace(/(\n)(cmd|tty):(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2" data-$2="$3"></button>$3</span></div>`)
       .replace(/(\n)(cmd|tty)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2 $4" data-$2="$4">$3</button></span></div>`)
 
       .replace(/\n(\d+)\. (.+)/g, `<div class="number-item" data-label="$1">$2</div>`)
@@ -136,17 +136,13 @@ class Parser {
       .replace(/(\n?)(href)\[(.+)\]:\s?(.+)(\r?)/g, `\n<a href="$4" class="$2" alt="$3">$3</a>\r`)
 
 
-      .replace(/(\n)(audio)\[(.+)\]:\s?(.+)/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><audio class="$3" src="$4" controls autoplay></audio></span></div>`)
+      .replace(/(\n)(audio)\[(tts)\]:\s?(.+)/g, `$1<div class="item $2 $3"><span class="label">$2</span><span class="value"><audio src="$4" controls autoplay></audio></span></div>`)
 
       // audio feature
-      .replace(/(\n)(audio):\s?(.+)/g, `$1<div class="item $2"><span class="label">$1</span><span class="value"><audio class="$2-player" src="$3" controls></audio></span></div>`)
+      .replace(/(\n)(audio):\s?(.+)/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><audio class="$2-player" src="$3" controls></audio></span></div>`)
 
       .replace(/\[PRESS RETURN\]/g, '<div class="press_return"><button class="btn return" title="Press Return" data-cloudbtn="">Press Return</button><div>')
 
-      // note info formatting
-      .replace(/(\n?)(note|info|thanks|warning|alert|greeting|extra):\s?(.*)/gi, `$1<div class="$2">$3</div>`)
-
-      .replace(/\n(a):\s?(.+)/gi, `<div class="article">$2</div>`)
       .replace(/\n(l):\s?(.+)/gi, `<div class="line">$2</div>`)
 
       .replace(/\n(gate)\[(.+)\]:\s?(.+)/gi, `<p><button class="btn speak" alt="Gateway" data-cmd="#gate $2 $3">💬</button> $3</p>`)
@@ -160,9 +156,13 @@ class Parser {
       .replace(/\n(live)\[(.+)]:\s?(.+)/gi, `<div class="box chat"><button class="btn chat" alt="Live Chat" data-cmd="#$2 $1 $3">💬</button> #$2 > $3</div>`)
 
       .replace(/\n(p|div|span|h1|h2|h3|h4|h5|article|section|br):\s?(.+)/gi, `<$1>$2</$1>`)
+
       .replace(/\n(\w+):\s?(.+)/gi, `<div class="item $1"><span class="label">$1</span><span class="value">$2</span></div>`)
+
       .replace(/\n(\s{2})?(\w+):\s?(.+)/gi, `<div class="item $2 indent1"><span class="label">$2</span><span class="value">$3</span></div>`)
+
       .replace(/\n(\s{4})?(\w+):\s?(.+)/gi, `<div class="item $2 indent2"><span class="label">$2</span><span class="value">$3</span></div>`)
+
       .replace(/\n(\s{6})?(\w+):\s?(.+)/gi, `<div class="item $2 indent3"><span class="label">$2</span><span class="value">$3</span></div>`)
       .trim();
 
@@ -185,6 +185,7 @@ class Parser {
     if (cssStyle.length) {
       this.html = `<section class="cover" style="${cssStyle.join(';')}">${this.html}</section>`;
     }
+
     return this.html;
   }
 
@@ -195,13 +196,10 @@ class Parser {
   ***********/
   _extractVars() {
     if (!this.text) return false;
-    const id = this.uid();
     const reggie = this.text.match(/\n(\#|\@|\$)(.+)\s?=\s?(.+)/);
     if (!reggie) return;
 
     this.vars[reggie[2].trim()] = {
-      id,
-      str: reggie[0],
       type: reggie[1].trim(),
       name: reggie[2].trim(),
       value: reggie[3].trim(),
@@ -215,22 +213,36 @@ class Parser {
     params: text - initial text string to get variables from.
     describe: this is a helper function to recursive _extractVars.
   ***********/
-  getVars() {
+  getVars(opts) {
     if (!this.text) return false;
-    const {colors} = this.agent.prompt;
-    this.text = this.text.replace(/::id::/g, this.id)
+
+    const {id, q} = opts;
+    const {client, agent, data} = q;
+    const {colors} = agent.prompt;
+
+    const _profile = [];
+    _profile.push(`::begin:profile`);
+    for (let x in agent.profile) {
+      _profile.push(`${x}: ${agent.profile[x]}`);
+    }
+    _profile.push(`::end:profile\n`);
+    const profile = _profile.join('\n');
+
+
+    this.text = this.text.replace(/::id::/g, id)
                           .replace(/::date::/g, formatDate(Date.now(), 'long', true))
-                          .replace(/::agent_id::/g, this.agent.id)
-                          .replace(/::agent_key::/g, this.agent.key)
-                          .replace(/::agent_name::/g, this.agent.profile.name)
-                          .replace(/::agent_color::/g, this.agent.profile.color)
-                          .replace(/::agent_bgcolor::/g, this.agent.profile.bgcolor)
-                          .replace(/::agent_describe::/g, this.agent.profile.describe)
-                          .replace(/::agent_background::/g, this.agent.profile.background)
-                          .replace(/::agent_emoji::/g, this.agent.prompt.emoji)
-                          .replace(/::agent_avatar::/g, this.agent.profile.avatar)
-                          .replace(/::client_id::/g, this.client.id)
-                          .replace(/::client_name::/g, this.client.profile.name);
+                          .replace(/::agent_id::/g, agent.id)
+                          .replace(/::agent_key::/g, agent.key)
+                          .replace(/::agent_name::/g, agent.profile.name)
+                          .replace(/::agent_color::/g, agent.profile.color)
+                          .replace(/::agent_bgcolor::/g, agent.profile.bgcolor)
+                          .replace(/::agent_describe::/g, agent.profile.describe)
+                          .replace(/::agent_background::/g, agent.profile.background)
+                          .replace(/::agent_emoji::/g, agent.prompt.emoji)
+                          .replace(/::agent_avatar::/g, agent.profile.avatar)
+                          .replace(/::client_id::/g, client.id)
+                          .replace(/::client_name::/g, client.profile.name)
+                          .replace(/::profile::/g, profile);
     return this._extractVars();
   }
 
@@ -278,7 +290,7 @@ module.exports = (opts) => {
     client,
     agent,
   });
-  parser.getVars();
+  parser.getVars(opts);
   parser.getTalk();
   return {
     text: parser.text.replace(/\\(#|@|$)/g, `$1`),

@@ -1,81 +1,41 @@
-image: ::agent_avatar::
+::begin:center
+image: /public/devas/::agent_key::/main.png
+::end:center
 
 # ::agent_name::
 
-p:This is the main help file for ::agent_name::.
-
-id: ::agent_id::
-key: ::agent_key::
-name: ::agent_name::
-emoji: ::agent_emoji::
-describe: ::agent_describe::
-
-## Features
-
-### 1. Security
-p: Access the local #security feature available to ::agent_name::.
-cmd:#::agent_key:: security
-
-### 2. Support
-p: Access the local #support feature available to ::agent_name::.
-cmd:#::agent_key:: support
-
-### 3. Services
-p: Access the local #services feature available to ::agent_name::.
-cmd:#::agent_key:: services
-
-
-## Methods
-
-### parse
-p:Parse data from the ::agent_name::.
-cmd:#::agent_key:: parse [string]
-
-### get
-p:Get a remote feecting file for the ::agent_name::.
-cmd:#::agent_key:: get [url]
-
-### uid
-p:Generate a unique id from the ::agent_name::.
-cmd:#::agent_key:: uid
-
-### status
-p:Return the status for the ::agent_name::.
-cmd:#::agent_key:: status
-
-### issue
-p: Create an issue associated with ::agent_name:: source code repository.
-tty:#::agent_key:: issue [title of issue]
-
-### help
-p:Get help using the ::agent_name::
-cmd:#::agent_key:: help
-
-
-## Functions
-
-p: The functions are used to provide internal functionality to the various methods that can be accessed by their respective command.
-
-### parse(opts)
-param:  opts - The options to pass in for parsing
-p: The `parse` function handles running the `this._agent.parse()` function for parsing #feecting data.
-
-### talk(t)
-param: t - The talk even to process
-p: The `talk` function is a location function to take the parsed data and look for any `talk` line items in the #feecting data.
-
-### talker(jobid)
-param: jobid - The job id to process.
-p: The `talker` function then takes the jobs that the `talk` function builds and then asks the question from the talk line items.
-
-### get(opts)
-param: opts - The optsions to request from
-p: The `get` function allows to get a #feecting file from a remote url.
+::profile::
 
 ---
 
+talk:#docs view devas/main:global
+
+---
+
+::begin:deva-methods
+## ::agent_name:: Methods
+p: These methods are available from ::agent_name::
+
+### Parse
+p: The parse method allows for the parsing of feecting data into consumable content such as text and html format.
+example: #feecting parse [feecting code]
+::end:deva-methods
+
+
+talk:#docs view devas/main:methods
+
+talk:#docs view devas/main:features
+
+---
+
+talk:#docs view devas/main:security
+
+---
+
+copyright: (c)2023 Quinn Michaels
+
+::begin:hidden
 #color = ::agent_color::
 #bgcolor = ::agent_bgcolor::
 #bg = ::agent_background::
-
-copyright: (c)2023 Quinn Michaels
+::end:hidden
