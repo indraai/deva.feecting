@@ -8,23 +8,13 @@ image: /public/devas/::agent_key::/main.png
 
 ---
 
-talk:#docs view devas/main:global
-
----
-
-::begin:deva-methods
 ## ::agent_name:: Methods
 p: These methods are available from ::agent_name::
-
+::begin:deva-methods
 ### Parse
 p: The parse method allows for the parsing of feecting data into consumable content such as text and html format.
 example: #feecting parse [feecting code]
 ::end:deva-methods
-
-
-talk:#docs view devas/main:methods
-
-talk:#docs view devas/main:features
 
 ---
 

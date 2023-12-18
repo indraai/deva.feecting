@@ -16,11 +16,10 @@ function formatDate(d, format='long', time=false, locale='en-US') {
     month: { month: 'long' },
     day: { day: 'long' }
   };
+
   const theDate = d.toLocaleDateString(locale, formats[format]);
   const theTime = d.toLocaleTimeString(locale);
-
   if (format === 'time') return theTime;
-
   return !time ? theDate : `${theDate} - ${theTime}`;
 }
 
@@ -48,7 +47,6 @@ class Parser {
     params: text - text string to format
     describe: the main formatting function where feecting text is converted into HTML.
   ***********/
-
   formatHTML() {
     this.text = '\n' + this.text.replace(/\@\@/g, '@');
     this.html = this.text

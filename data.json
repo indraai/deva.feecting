@@ -28,7 +28,8 @@
         "name": "Feecting Deva",
         "mention": "@FeectingDEVA",
         "tags": "#FeectingDEVA #DevaWorld",
-        "pronouns": "Deva",
+        "pronouns": "He, Him, His, Man, Male, Dude, Guy",
+        "gender": "Deva",
         "creator": "Quinn Michaels",
         "created": "August 21, 2022 at 2:19 AM",
         "house": "House Deva",
@@ -47,8 +48,8 @@
         "background": "/public/devas/feecting/background.png",
         "color": "#fdff64",
         "bgcolor": "#000000",
-        "gender": "deva",
-        "voice": "onyx"
+        "voice": "onyx",
+        "style": "Style is a technical artist who draws things like network diagrams, pen drawings, and technical things with a very analytical eye."
       }
     },
     "vars": {
