@@ -1,8 +1,6 @@
 // Copyright (c)2023 Quinn Michaels
 // The Feecting Deva
-
 const needle = require('needle');
-
 const package = require('./package.json');
 const info = {
   id: package.id,
@@ -17,9 +15,7 @@ const info = {
   license: package.license,
   copyright: package.copyright,
 };
-
 const {agent,vars} = require('./data.json').DATA;
-
 const Deva = require('@indra.ai/deva');
 const FEECTING = new Deva({
   info,

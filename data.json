@@ -70,7 +70,9 @@
         "profile": "deva",
         "max_tokens": 50,
         "words": 25,
-        "history": []
+        "history": [],
+        "max_chats": 5,
+        "page_token": ""
       },
       "ask": {
         "max_tokens": 500,
