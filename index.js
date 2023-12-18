@@ -22,16 +22,11 @@ const FEECTING = new Deva({
   agent,
   vars,
   utils: {
-    translate(input) {
-      return input.trim();
-    },
+    translate(input) {return input.trim();},
     parse: require('./_parse.js'),
-    process(input) {
-      return input.trim();
-    },
+    process(input) {return input.trim();},
   },
   func: {
-
     /***********
       func: talk
       params: j - the talk events to process
@@ -54,7 +49,6 @@ const FEECTING = new Deva({
         }).catch(reject);
       });
     },
-
     /***********
       func: talker
       params: jobid - the job id to work
@@ -78,7 +72,6 @@ const FEECTING = new Deva({
               if (!answer.a.html) answer.a.html = '';
               job.text = job.text.replace(j.placeholder, answer.a.text);
               job.html = job.html.replace(j.placeholder, answer.a.html);
-
               const pidx = job.pending.findIndex(i => i.id === j.id);
               const pend = job.pending.splice(pidx, 1);
               if (!job.pending.length) {
@@ -91,7 +84,6 @@ const FEECTING = new Deva({
         })
       });
     },
-
     /**************
     func: get
     params: url
@@ -131,7 +123,6 @@ const FEECTING = new Deva({
         })
       });
     },
-
     /**************
     method: get
     params: packet.q.text
