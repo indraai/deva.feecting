@@ -63,10 +63,10 @@ class Parser {
       .replace(/::begin:(\w+)?:?(.+)?/g, '<div class="box $1" data-id="$2">')
       .replace(/::end:(\w+)?:?(md5|sha256|sha512)?-?(.+)?/g, '</div>')
 
-      .replace(/\n####\s(.+)/g, `<h4>$1</h4>`)
-      .replace(/\n###\s(.+)/g, `<h3>$1</h3>`)
-      .replace(/\n##\s(.+)/g, `<h2>$1</h2>`)
-      .replace(/\n#\s(.+)/g, `<h1>$1</h1>`)
+      .replace(/\n####\s?(.+)/g, `<h4>$1</h4>`)
+      .replace(/\n###\s?(.+)/g, `<h3>$1</h3>`)
+      .replace(/\n##\s?(.+)/g, `<h2>$1</h2>`)
+      .replace(/\n#\s?(.+)/g, `<h1>$1</h1>`)
 
       .replace(/(\n)={4,}\n/g, `$1<hr class="double xsmall" />`)
       .replace(/(\n)={3}\n/g, `$1<hr class="double small" />`)
@@ -77,6 +77,11 @@ class Parser {
       .replace(/(\n)-{2}\n/g, `$1<hr class="single medium"/>`)
       .replace(/(\n)-{1}\n/g, `$1<hr class="single large"/>`)
 
+      .replace(/(\*\*|__)(?=(?:(?:[^`]*`[^`\r\n]*`)*[^`]*$))(?![^\/<]*>.*<\/.+>)(.*?)\1/gi, `<strong>$2</strong>`)
+      .replace(/```(.*?)```/sg, '\n<pre><code>$1</code></pre>\n')
+      .replace(/`(.*?)`/gi, '<code>$1</code>')
+
+      // .replace(/(\*\*)(.+)?(\*\*)/g, `<b>$2</b>`)
       // .replace(/(\s)(\#.+?)(\b)/g, `$1<span class="tag thing">$2</span>$3`)
       // .replace(/(\s)(\@.+?)(\b)/g, `$1<span class="tag person">$2</span>$3`)
       // .replace(/(\s)(\$.+?)(\b)/g, `$1<span class="tag place">$2</span>$3`)
@@ -162,6 +167,8 @@ class Parser {
       .replace(/\n(\s{4})?(\w+):\s?(.+)/gi, `<div class="item $2 indent2"><span class="label">$2</span><span class="value">$3</span></div>`)
 
       .replace(/\n(\s{6})?(\w+):\s?(.+)/gi, `<div class="item $2 indent3"><span class="label">$2</span><span class="value">$3</span></div>`)
+
+      // strong format
       .trim();
 
       // set the container
@@ -241,6 +248,7 @@ class Parser {
                           .replace(/::client_id::/g, client.id)
                           .replace(/::client_name::/g, client.profile.name)
                           .replace(/::profile::/g, profile);
+
     return this._extractVars();
   }
 
@@ -277,7 +285,9 @@ class Parser {
 
 module.exports = (opts) => {
   const {meta, text, client, agent} = opts.q;
+
   const key = agent ? agent.key : client.key;
+
   const parser = new Parser({
     id: opts.id,
     key,
@@ -288,6 +298,7 @@ module.exports = (opts) => {
     client,
     agent,
   });
+
   parser.getVars(opts);
   parser.getTalk();
   return {
