@@ -1,28 +1,31 @@
 {
   "id": 5461868899003,
-  "name": "@indra.ai/feectingdeva",
-  "version": "0.1.68",
+  "name": "@indra.ai/deva.feecting",
+  "version": "0.0.1",
   "author": "Quinn Michaels",
   "license": "MIT",
   "description": "The Feecting Deva manages all the parsing of feecting language in deva.world.",
-  "copyright": "2023",
+  "copyright": "2025",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/indraai/FeectingDeva.git"
+    "url": "git+ssh://git@github.com/indraai/deva.feecting.git"
   },
   "keywords": [
     "Feecting",
     "Deva",
-    "deva.world"
+    "Indra.ai",
+    "Deva.space",
+    "Deva.cloud",
+    "Deva.world"
   ],
   "bugs": {
-    "url": "https://github.com/indraai/FeectingDeva/issues"
+    "url": "https://github.com/indraai/deva.feecting/issues"
   },
-  "homepage": "https://github.com/indraai/FeectingDeva#readme",
+  "homepage": "https://deva.space/devas/feecting",
   "dependencies": {
     "@indra.ai/deva": "^1.2.22",
     "needle": "^3.2.0"
