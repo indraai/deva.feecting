@@ -1,6 +1,11 @@
 "use strict"
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+
+// set the __dirname
+import {fileURLToPath} from 'node:url';    
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const basePath = path.join(__dirname, '..', '..');
 
 function formatDate(d, format='long', time=false, locale='en-US') {
@@ -283,7 +288,7 @@ class Parser {
   }
 }
 
-module.exports = (opts) => {
+export default (opts) => {
   const {meta, text, client, agent} = opts.q;
 
   const key = agent ? agent.key : client.key;

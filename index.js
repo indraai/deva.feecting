@@ -25,14 +25,14 @@ const info = {
   copyright: pkg.copyright,
 };
 
-
+import parse from './_parse.js';
 const FEECTING = new Deva({
   info,
   agent,
   vars,
   utils: {
     translate(input) {return input.trim();},
-    parse: require('./_parse.js'),
+    parse,
     process(input) {return input.trim();},
   },
   func: {
