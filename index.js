@@ -1,22 +1,24 @@
-// Copyright (c)2023 Quinn Michaels
+// Copyright (c)2025 Quinn Michaels
 // The Feecting Deva
-const needle = require('needle');
-const package = require('./package.json');
+import needle from 'needle';
+import pkg from './package.json' with {type:'json'};
+import data from './data.json' with {type:'json'};
+const {agent, vars} = data.DATA;
 const info = {
-  id: package.id,
-  name: package.name,
-  describe: package.description,
-  version: package.version,
+  id: pkg.id,
+  name: pkg.name,
+  describe: pkg.description,
+  version: pkg.version,
   dir: __dirname,
-  url: package.homepage,
-  git: package.repository.url,
-  bugs: package.bugs.url,
-  author: package.author,
-  license: package.license,
-  copyright: package.copyright,
+  url: pkg.homepage,
+  git: pkg.repository.url,
+  bugs: pkg.bugs.url,
+  author: pkg.author,
+  license: pkg.license,
+  copyright: pkg.copyright,
 };
-const {agent,vars} = require('./data.json').DATA;
-const Deva = require('@indra.ai/deva');
+
+
 const FEECTING = new Deva({
   info,
   agent,
@@ -139,4 +141,4 @@ const FEECTING = new Deva({
     console.log('FEECTING ERROR', err);
   }
 });
-module.exports = FEECTING
+export default FEECTING
