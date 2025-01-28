@@ -1,5 +1,6 @@
 // Copyright (c)2025 Quinn Michaels
 // The Feecting Deva
+import Deva from '@indra.ai/deva';
 import needle from 'needle';
 import pkg from './package.json' with {type:'json'};
 import data from './data.json' with {type:'json'};
