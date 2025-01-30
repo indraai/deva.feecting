@@ -135,7 +135,7 @@ const FEECTING = new Deva({
     /**************
     method: get
     params: packet.q.text
-    describe: get a remoate feecting script using the web Devas.
+    describe: get a remote feecting script using the web Devas.
     we need to look at this function because it relies on another deva let's use
     needle to get web requests.
     ***************/
