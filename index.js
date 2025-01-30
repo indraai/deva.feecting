@@ -144,6 +144,10 @@ const FEECTING = new Deva({
       return this.func.get(packet);
     },
   },
+  onReady(data, resolve) {
+    this.prompt('ready');
+    return resolve(data);
+  },
   onError(err) {
     console.log('FEECTING ERROR', err);
   }
