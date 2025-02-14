@@ -49,9 +49,9 @@ const FEECTING = new Deva({
       return new Promise((resolve, reject) => {
         if (!t) return reject(this.vars.messages.no_tasks);
         if (!t.data.talk.length) return resolve(t);
-        t.pending = this.copy(t.data.talk);
+        t.pending = this.lib.copy(t.data.talk);
         t.pending.complete = false;
-        this.vars.jobs[t.data.id] = this.copy(t);
+        this.vars.jobs[t.data.id] = this.lib.copy(t);
         this.vars.talking = true;
         this.func.processor(t.data.id).then(job => {
           return resolve(job);
@@ -84,7 +84,7 @@ const FEECTING = new Deva({
               const pidx = job.pending.findIndex(i => i.id === j.id);
               const pend = job.pending.splice(pidx, 1);
               if (!job.pending.length) {
-                const complete = this.copy(job);
+                const complete = this.lib.copy(job);
                 delete this.vars.jobs[jobid]; // delete job from jobs when done.
                 return resolve(complete);
               }
@@ -124,7 +124,7 @@ const FEECTING = new Deva({
       return new Promise((resolve, reject) => {
         if (!packet) return resolve(this._messages.nopacket);
         if (!packet.q.text) return resolve(this._messages.nopacket);
-        const parsed = this.utils.parse(this.copy(packet));
+        const parsed = this.utils.parse(this.lib.copy(packet));
         this.func.tasks(parsed).then(t => {
           return resolve(t);
         }).catch(err => {
@@ -145,11 +145,13 @@ const FEECTING = new Deva({
     },
   },
   onReady(data, resolve) {
-    this.prompt('ready');
+    this.prompt(this.vars.messages.ready);
     return resolve(data);
   },
-  onError(err) {
-    console.log('FEECTING ERROR', err);
+  onError(err, data, reject) {
+    this.prompt(this.vars.messages.error);
+    console.log(err);
+    return reject(err);
   }
 });
 export default FEECTING

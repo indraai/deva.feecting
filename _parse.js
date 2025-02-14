@@ -56,7 +56,6 @@ class Parser {
     this.text = '\n' + this.text.replace(/\@\@/g, '@');
     this.html = this.text
       // main label formatting
-
       .replace(/\n::BEGIN:(\w+)?:?(.+)?/g, '<div class="CONTAINER $1" data-id="$2">')
       .replace(/\n::END:(\w+)?:?(md5|sha256|sha512)?:?(.+)?/g, '</div>')
 
@@ -65,113 +64,89 @@ class Parser {
       .replace(/(\n)(var):(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value">$3</span></div>`)
       .replace(/(\n)(var)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$3</span><span class="value">$4</span></div>`)
 
-      .replace(/::begin:(\w+)?:?(.+)?/g, '<div class="box $1" data-id="$2">')
-      .replace(/::end:(\w+)?:?(md5|sha256|sha512)?-?(.+)?/g, '</div>')
+      .replace(/(\n\s*)::begin:(\w+)?:?(.+)?/g, '$1<div class="box $2" data-id="$3">')
+      .replace(/(\n\s*)::end:(\w+)?:?(md5|sha256|sha512)?-?(.+)?/g, '$1</div>')
 
-      .replace(/\n####\s?(.+)/g, `<h4>$1</h4>`)
-      .replace(/\n###\s?(.+)/g, `<h3>$1</h3>`)
-      .replace(/\n##\s?(.+)/g, `<h2>$1</h2>`)
-      .replace(/\n#\s?(.+)/g, `<h1>$1</h1>`)
+      .replace(/\n\s*####\s(.+)/g, `<h4>$1</h4>`)
+      .replace(/\n\s*###\s(.+)/g, `<h3>$1</h3>`)
+      .replace(/\n\s*##\s(.+)/g, `<h2>$1</h2>`)
+      .replace(/\n\s*#\s(.+)/g, `<h1>$1</h1>`)
 
-      .replace(/(\n)={4,}\n/g, `$1<hr class="double xsmall" />`)
-      .replace(/(\n)={3}\n/g, `$1<hr class="double small" />`)
-      .replace(/(\n)={2}\n/g, `$1<hr class="double medium" />`)
-      .replace(/(\n)={1}\n/g, `$1<hr class="double large" />`)
-      .replace(/(\n)-{4,}\n/g, `$1<hr class="single xsmall"/>`)
-      .replace(/(\n)-{3}\n/g, `$1<hr class="single small"/>`)
-      .replace(/(\n)-{2}\n/g, `$1<hr class="single medium"/>`)
-      .replace(/(\n)-{1}\n/g, `$1<hr class="single large"/>`)
+      .replace(/(\n\s*)={4,}\n/g, `$1<hr class="double xsmall" />`)
+      .replace(/(\n\s*)={3}\n/g, `$1<hr class="double small" />`)
+      .replace(/(\n\s*)={2}\n/g, `$1<hr class="double medium" />`)
+      .replace(/(\n\s*)={1}\n/g, `$1<hr class="double large" />`)
+      .replace(/(\n\s*)-{4,}\n/g, `$1<hr class="single xsmall"/>`)
+      .replace(/(\n\s*)-{3}\n/g, `$1<hr class="single small"/>`)
+      .replace(/(\n\s*)-{2}\n/g, `$1<hr class="single medium"/>`)
+      .replace(/(\n\s*)-{1}\n/g, `$1<hr class="single large"/>`)
 
       .replace(/(\*\*|__)(?=(?:(?:[^`]*`[^`\r\n]*`)*[^`]*$))(?![^\/<]*>.*<\/.+>)(.*?)\1/gi, `<strong>$2</strong>`)
       .replace(/```(.*?)```/sg, '\n<pre><code>$1</code></pre>\n')
       .replace(/`(.*?)`/gi, '<code>$1</code>')
 
-      // .replace(/(\*\*)(.+)?(\*\*)/g, `<b>$2</b>`)
-      // .replace(/(\s)(\#.+?)(\b)/g, `$1<span class="tag thing">$2</span>$3`)
-      // .replace(/(\s)(\@.+?)(\b)/g, `$1<span class="tag person">$2</span>$3`)
-      // .replace(/(\s)(\$.+?)(\b)/g, `$1<span class="tag place">$2</span>$3`)
-      // .replace(/(\s)(\!.+?)(\b)/g, `$1<span class="tag bang">$2</span>$3`)
+      .replace(/(\*\*)(.+)?(\*\*)/g, `<b>$2</b>`)
+      // .replace(/(\s)(\#\w+)(\b)/g, `$1<span class="tag hash">$2</span>$3`)
+      // .replace(/(\b)(\@.+?)(\b)/g, `$1<span class="tag person">$2</span>$3`)
+      // .replace(/(\b)(\$.+?)(\b)/g, `$1<span class="tag place">$2</span>$3`)
+      // .replace(/(\b)(\!.+?)(\b)/g, `$1<span class="tag bang">$2</span>$3`)
       //
       // .replace(/(\s)\_([#|@|$|!].+?)(\b)/gi, `$1$2$3`)
 
       // image processing regex
-      .replace(/\nimage:\s?(.+)/g, `<div class="image"><img src="$1" /></div>`)
-      .replace(/\n(avatar|thumbnail):\s?(.+)/g, `<div class="$1"><img src="$2" /></div>`)
+      .replace(/\n\s*image:\s?(.+)/g, `<div class="image"><img src="$1" /></div>`)
+      .replace(/\n\s*(avatar|thumbnail):\s?(.+)/g, `<div class="$1"><img src="$2" /></div>`)
 
-      .replace(/\n?img:\s?(.+)\/(.+)\/(\d+)\/avatar/g, `<button class="btn avi" data-cmd="#space $2:$1 $3/main:look"><img src="/asset/$1/$2/$3/avatar" /></button>`)
-      .replace(/\n?img:\s?(.+)/g, `<div class="image"><img src="/asset/$1" /></div>`)
+      .replace(/\n\s*img:\s?(.+)/g, `<div class="image"><img src="/asset/$1" /></div>`)
 
-      .replace(/\n(select)\[(.+):(.+)\]:(.+)/gi, `<div class="item $1"><span class="label" data-index="$2">$3</span><span class="input"><button type="button" class="input-select" name="$1" data-cloudbtn="$2">$4</button></span></div>`)
-      .replace(/(\n?)(cloudconf)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-cloudbtn="$4">$3</button>')
-      .replace(/(\n?)(cloud)\[(.+)\]:(.+)/g, '$1<button class="btn cloudbtn" title="$3" data-cloudbtn="$4">$3</button>')
-      .replace(/(\n?)(cloudcmd)\[(.+)\]:(.+)/g, '$1<button class="btn cloudcmd" title="$3" data-cloudcmd="$4">$3</button>')
-      .replace(/(\n)?(look)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-cloudcmd="look $4">$3</button>')
-
-      .replace(/(\n?)(button)\[(.+)\]:(.+)/g, '$1<button class="btn $2" title="$3" data-button="$4">$3</button>')
+      .replace(/(\n\s*)(button)\[(.+)\]:\s(.+)/g, '$1<button class="btn $2" title="$3" data-button="$4">$3</button>')
 
       // cmd/tty tag parser
-      .replace(/(\n)(cmd|tty):(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2" data-$2="$3"></button>$3</span></div>`)
-      .replace(/(\n)(cmd|tty)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2 $4" data-$2="$4">$3</button></span></div>`)
+      .replace(/(\n\s*)(cmd|tty):(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2" data-$2="$3"></button>$3</span></div>`)
+      
+      .replace(/(\s\n*)(cmd|tty)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2 $4" data-$2="$4">$3</button></span></div>`)
 
-      .replace(/\n(\d+)\. (.+)/g, `<div class="number-item" data-label="$1">$2</div>`)
-      .replace(/\n> (.+)\r?/g, `<div class="list-item">$1</div>`)
-      .replace(/\n- (.+)\r?/g, `<div class="line-item">$1</div>`)
+      .replace(/(\s\n*)(law):(.+)\r?/g, `$1<div class="item $2"><button class="label" data-$2="#legal add $3">$2</button><span class="value">$3</span></div>`)
+      .replace(/(\s\n*)(law)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><button class="label" data-$2="#legal add:$3 $4">$2</button><span class="value">$4</span></div>`)
+
+      .replace(/(\n\s*)(\d+)\. (.+)/g, `$1<div class="number-item" data-label="$2">$3</div>`)
+      .replace(/(\n\s*)> (.+)\r?/g, `$1<div class="list-item">$2</div>`)
+      .replace(/(\n\s*)- (.+)\r?/g, `$1<div class="line-item">$2</div>`)
 
       // pdf links
-      .replace(/(\n)(pdf):\s?(.+)/g, `$1<div class="$2"><iframe width="100%" height="100%" src="$3" frameborder="0"></iframe></div>`)
+      .replace(/(\n\s*)(pdf):\s?(.+)/g, `$1<div class="$2"><iframe width="100%" height="100%" src="$3" frameborder="0"></iframe></div>`)
 
       // youtube links
-      .replace(/\nyoutube:\s?(.+)/g, `\n<div class="center youtube-video-player"><iframe src="https://www.youtube.com/embed/$1" frameborder="0"></iframe></div>`)
-
-      // youtube links
-      .replace(/\nmap:\s?(.+)/g, `\n<div class="center google-map-player"><iframe src="https://www.google.com/maps/embed?pb=$1" frameborder="0" width="650" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>`)
-
-
-
-      // youtube links with parameters
-      .replace(/(\n)(youtube)\[play\]:\s?(.+)/g, `\n<div class="center youtube-video-player"><iframe src="https://www.youtube.com/embed/$3?&autoplay=1" frameborder="0"></iframe></div>`)
+      .replace(/(\n\s*)(youtube):\s?(.+)/g, `$1<div class="center youtube-video-player"><iframe src="https://www.youtube.com/embed/$3" frameborder="0"></iframe></div>`)
 
       // links
       // link with just url
-      .replace(/(\n?)(link):\s?(.+)/g, `$1<div class="item $2"><span class="label">link</span><span class="value"><a href="$3" class="$2" alt="$2" target="_blank">$3</a></span></div>`)
+      .replace(/(\n\s*)(link):\s?(.+)/g, `$1<div class="item $2"><span class="label">link</span><span class="value"><a href="$3" class="$2" alt="$2" target="_blank">$3</a></span></div>`)
 
       // link with bracket label/text
-      .replace(/(\n?)(link)\[(.+)\]:\s?(.+)/g, `$1<div class="item $2"><span class="label">link</span><span class="value"><a href="$4" class="$2" alt="$3" target="$2">$3</a></span></div>`)
+      .replace(/(\n\s*)(link)\[(.+)\]:\s?(.+)/g, `$1<div class="item $2"><span class="label">link</span><span class="value"><a href="$4" class="$2" alt="$3" target="$2">$3</a></span></div>`)
 
       // numbered list item of href links
-      .replace(/(\n?)(href)\[(\d+):(.+)\]:\s?(.+)(\r?)/g, `\n<div class="number-item" data-label="$3"><a href="$5" class="$2" alt="$4">$4</a></div>\r`)
+      .replace(/(\n\s*)(href)\[(\d+):(.+)\]:\s?(.+)(\r?)/g, `\n<div class="number-item" data-label="$3"><a href="$5" class="$2" alt="$4">$4</a></div>\r`)
       // standard href
-      .replace(/(\n?)(href)\[(.+)\]:\s?(.+)(\r?)/g, `\n<a href="$4" class="$2" alt="$3">$3</a>\r`)
+      .replace(/(\n\s*)(href)\[(.+)\]:\s?(.+)(\r?)/g, `\n<a href="$4" class="$2" alt="$3">$3</a>\r`)
 
 
-      .replace(/(\n)(audio)\[(tts)\]:\s?(.+)/g, `$1<div class="item $2 $3"><span class="label">$2</span><span class="value"><audio src="$4" controls autoplay></audio></span></div>`)
+      .replace(/(\n\s*)(audio)\[(tts)\]:\s?(.+)/g, `$1<div class="item $2 $3"><span class="label">$2</span><span class="value"><audio src="$4" controls autoplay></audio></span></div>`)
 
       // audio feature
-      .replace(/(\n)(audio):\s?(.+)/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><audio class="$2-player" src="$3" controls></audio></span></div>`)
+      .replace(/(\n\s*)(audio):\s?(.+)/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><audio class="$2-player" src="$3" controls></audio></span></div>`)
 
       .replace(/\[PRESS RETURN\]/g, '<div class="press_return"><button class="btn return" title="Press Return" data-cloudbtn="">Press Return</button><div>')
 
-      .replace(/\n(l):\s?(.+)/gi, `<div class="line">$2</div>`)
+      .replace(/(\n\s*)(l):\s?(.+)/gi, `$1<div class="line">$3</div>`)
 
-      .replace(/\n(gate)\[(.+)\]:\s?(.+)/gi, `<p><button class="btn speak" alt="Gateway" data-cmd="#gate $2 $3">💬</button> $3</p>`)
+      .replace(/(\n\s*)(p|h1|h2|h3|h4|h5|article)\[speak\:(.+)?]:\s?(.+)/gi, `$1<$2><button class="btn speak" alt="Speak" data-cmd="#voice say:$3 $4">💬</button> $4</$2>`)
 
-      .replace(/\n(p|h1|h2|h3|h4|h5|article|div|span)\[speak\]:\s?(.+)/gi, `<$1><button class="btn speak" alt="Speak" data-cmd="#voice say $2">💬</button> $2</$1>`)
+      .replace(/(\n\s*)(p|div|span|h1|h2|h3|h4|h5|article|section|br):\s?(.+)/gi, `$1<$2>$3</$2>`)
 
-      .replace(/\n(p|h1|h2|h3|h4|h5|article)\[speak\:(.+)?]:\s?(.+)/gi, `<$1><button class="btn speak" alt="Speak" data-cmd="#voice say:$2 $3">💬</button> $3</$1>`)
+      .replace(/(\n\s*)(\w+):\s(.+)/gi, `$1<div class="item $1"><span class="label">$2</span><span class="value">$3</span></div>`)
 
-      .replace(/\n(data)\[(.+)?]:\s?(.+)/gi, `<div class="box data"><p>$3</p><button class="btn data" alt="Data" data-cmd="#data $2 $3">$2</button></div>`)
-
-      .replace(/\n(live)\[(.+)]:\s?(.+)/gi, `<div class="box chat"><button class="btn chat" alt="Live Chat" data-cmd="#$2 $1 $3">💬</button> #$2 > $3</div>`)
-
-      .replace(/\n(p|div|span|h1|h2|h3|h4|h5|article|section|br):\s?(.+)/gi, `<$1>$2</$1>`)
-
-      .replace(/\n(\w+):\s?(.+)/gi, `<div class="item $1"><span class="label">$1</span><span class="value">$2</span></div>`)
-
-      .replace(/\n(\s{2})?(\w+):\s?(.+)/gi, `<div class="item $2 indent1"><span class="label">$2</span><span class="value">$3</span></div>`)
-
-      .replace(/\n(\s{4})?(\w+):\s?(.+)/gi, `<div class="item $2 indent2"><span class="label">$2</span><span class="value">$3</span></div>`)
-
-      .replace(/\n(\s{6})?(\w+):\s?(.+)/gi, `<div class="item $2 indent3"><span class="label">$2</span><span class="value">$3</span></div>`)
 
       // strong format
       .trim();
@@ -206,7 +181,7 @@ class Parser {
   ***********/
   _extractVars() {
     if (!this.text) return false;
-    const reggie = this.text.match(/\n(\#|\@|\$)(.+)\s?=\s?(.+)/);
+    const reggie = this.text.match(/\n\s*(\#|\@|\$)(.+)\s?=\s?(.+)/);
     if (!reggie) return;
 
     this.vars[reggie[2].trim()] = {
@@ -265,7 +240,7 @@ class Parser {
   _extractTalk() {
     if (!this.text) return false;
     const id = this.uid();
-    const reggie = (/(^|\n)talk:\s?(.+)/i).exec(this.text);
+    const reggie = (/(\n\s*)talk:\s?(.+)/i).exec(this.text);
     if (!reggie) return;
     const placeholder = `::${id}::`;
     this.talk.push({
