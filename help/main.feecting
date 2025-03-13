@@ -1,15 +1,16 @@
-::begin:center
-image: /public/devas/::agent_key::/main.png
-::end:center
-
 # ::agent_name::
 
-::profile::
+::agent_profile::
 
 ---
 
-## ::agent_name:: Methods
+talk: #docs file:private:header main
+
+---
+
+## Methods
 p: These methods are available from ::agent_name::
+
 ::begin:deva-methods
 ### Parse
 p: The parse method allows for the parsing of feecting data into consumable content such as text and html format.
@@ -18,11 +19,7 @@ example: #feecting parse [feecting code]
 
 ---
 
-talk:#docs view devas/main:security
-
----
-
-copyright: (c)2023 Quinn Michaels
+copyright: (c)2025 Quinn Michaels
 
 ::begin:hidden
 #color = ::agent_color::

@@ -56,21 +56,21 @@ class Parser {
     this.text = '\n' + this.text.replace(/\@\@/g, '@');
     this.html = this.text
       // main label formatting
-      .replace(/\n::BEGIN:(\w+)?:?(.+)?/g, '<div class="CONTAINER $1" data-id="$2">')
-      .replace(/\n::END:(\w+)?:?(md5|sha256|sha512)?:?(.+)?/g, '</div>')
+      .replace(/\n\s*::BEGIN:(\w+)?:?(.+)?/g, '<div class="CONTAINER $1" data-id="$2">')
+      .replace(/\n\s*::END:(\w+)?:?(md5|sha256|sha512)?:?(.+)?/g, '</div>')
 
       .replace(/\n?\s+?\/\/(.+)/g, '<div class="comment">$1</div>')
 
-      .replace(/(\n)(var):(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value">$3</span></div>`)
-      .replace(/(\n)(var)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$3</span><span class="value">$4</span></div>`)
+      .replace(/(\n\s*)(var):(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value">$3</span></div>`)
+      .replace(/(\n\s*)(var)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$3</span><span class="value">$4</span></div>`)
 
       .replace(/(\n\s*)::begin:(\w+)?:?(.+)?/g, '$1<div class="box $2" data-id="$3">')
       .replace(/(\n\s*)::end:(\w+)?:?(md5|sha256|sha512)?-?(.+)?/g, '$1</div>')
 
-      .replace(/\n\s*####\s(.+)/g, `<h4>$1</h4>`)
-      .replace(/\n\s*###\s(.+)/g, `<h3>$1</h3>`)
-      .replace(/\n\s*##\s(.+)/g, `<h2>$1</h2>`)
-      .replace(/\n\s*#\s(.+)/g, `<h1>$1</h1>`)
+      .replace(/(\n\s*)####\s(.+)/g, `$1<h4>$2</h4>`)
+      .replace(/(\n\s*)###\s(.+)/g, `$1<h3>$2</h3>`)
+      .replace(/(\n\s*)##\s(.+)/g, `$1<h2>$2</h2>`)
+      .replace(/(\n\s*)#\s(.+)/g, `$1<h1>$2</h1>`)
 
       .replace(/(\n\s*)={4,}\n/g, `$1<hr class="double xsmall" />`)
       .replace(/(\n\s*)={3}\n/g, `$1<hr class="double small" />`)
@@ -94,7 +94,7 @@ class Parser {
       // .replace(/(\s)\_([#|@|$|!].+?)(\b)/gi, `$1$2$3`)
 
       // image processing regex
-      .replace(/\n\s*image:\s?(.+)/g, `<div class="image"><img src="$1" /></div>`)
+      .replace(/(\n\s*)image:\s?(.+)/g, `$1<div class="image"><img src="$2" /></div>`)
       .replace(/\n\s*(avatar|thumbnail):\s?(.+)/g, `<div class="$1"><img src="$2" /></div>`)
 
       .replace(/\n\s*img:\s?(.+)/g, `<div class="image"><img src="/asset/$1" /></div>`)
@@ -227,7 +227,7 @@ class Parser {
                           .replace(/::agent_avatar::/g, agent.profile.avatar)
                           .replace(/::client_id::/g, client.id)
                           .replace(/::client_name::/g, client.profile.name)
-                          .replace(/::profile::/g, profile);
+                          .replace(/::agent_profile::/g, profile);
 
     return this._extractVars();
   }
@@ -248,7 +248,7 @@ class Parser {
       placeholder,
       value: reggie[2],
     });
-    this.text = this.text.replace(reggie[0], '\n' + placeholder + '\n')
+    this.text = this.text.replace(reggie[0], '\n' + placeholder)
     return this._extractTalk();
   }
 
@@ -274,7 +274,7 @@ export default (opts) => {
     cmd: meta.params.shift(),
     container: meta.params.length ? meta.params.join(' ') : false,
     params: meta.params,
-    text,
+    text: text.replace(/(\n)(\s*)(\W|\b)/g, '$1$3'),
     client,
     agent,
   });
