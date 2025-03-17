@@ -102,7 +102,7 @@ class Parser {
       .replace(/(\n\s*)(button)\[(.+)\]:\s(.+)/g, '$1<button class="btn $2" title="$3" data-button="$4">$3</button>')
 
       // cmd/tty tag parser
-      .replace(/(\n\s*)(cmd|tty):(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2" data-$2="$3"></button>$3</span></div>`)
+      .replace(/(\n\s*)(cmd|tty):\s?(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2" data-$2="$3"></button>$3</span></div>`)
       
       .replace(/(\s\n*)(cmd|tty)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2 $4" data-$2="$4">$3</button></span></div>`)
 
@@ -214,21 +214,20 @@ class Parser {
     const profile = _profile.join('\n');
 
 
-    this.text = this.text.replace(/::id::/g, id)
-                          .replace(/::date::/g, formatDate(Date.now(), 'long', true))
-                          .replace(/::agent_id::/g, agent.id)
-                          .replace(/::agent_key::/g, agent.key)
-                          .replace(/::agent_name::/g, agent.profile.name)
-                          .replace(/::agent_color::/g, agent.profile.color)
-                          .replace(/::agent_bgcolor::/g, agent.profile.bgcolor)
-                          .replace(/::agent_describe::/g, agent.profile.describe)
-                          .replace(/::agent_background::/g, agent.profile.background)
-                          .replace(/::agent_emoji::/g, agent.prompt.emoji)
-                          .replace(/::agent_avatar::/g, agent.profile.avatar)
-                          .replace(/::client_id::/g, client.id)
-                          .replace(/::client_name::/g, client.profile.name)
-                          .replace(/::agent_profile::/g, profile);
-
+    this.text = this.text.replace(/\{\{id\}\}/g, id)
+                          .replace(/\{\{today\}\}/g, formatDate(Date.now(), 'long', true))
+                          
+                          .replace(/\{\{client\.(\w+)\}\}/g, (match,token) => {
+                            return client[token] || false;
+                          }).replace(/\{\{agent\.(\w+)\}\}/g, (match,token) => {
+                            return agent[token] || false;
+                          }).replace(/\{\{profile\.(\w+)\}\}/g, (match,token) => {
+                            return agent.profile[token] || false;
+                          }).replace(/\{\{prompt\.(\w+)\}\}/g, (match,token) => {
+                            return agent.prompt[token] || false;
+                          }).replace(/\{\{profile\}\}/g, (match,token) => {
+                            return profile || false;
+                          });
     return this._extractVars();
   }
 
@@ -242,7 +241,7 @@ class Parser {
     const id = this.uid();
     const reggie = (/(\n\s*)talk:\s?(.+)/i).exec(this.text);
     if (!reggie) return;
-    const placeholder = `::${id}::`;
+    const placeholder = `{{${id}}}`;
     this.talk.push({
       id,
       placeholder,

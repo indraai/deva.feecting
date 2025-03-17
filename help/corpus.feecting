@@ -1,0 +1,9 @@
+# {{agent.name}}
+
+{{profile}}
+
+talk: #algorithm file:public main:header
+talk: #security file:public main:header
+talk: #legal file:public main:header
+
+copyright: ©2025 Quinn Michaels
