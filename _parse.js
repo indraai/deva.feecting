@@ -94,11 +94,7 @@ class Parser {
       // .replace(/(\s)\_([#|@|$|!].+?)(\b)/gi, `$1$2$3`)
 
       // image processing regex
-      .replace(/(\n\s*)image:\s?(.+)/g, `$1<div class="image"><img src="$2" /></div>`)
-      .replace(/\n\s*(avatar|thumbnail):\s?(.+)/g, `<div class="$1"><img src="$2" /></div>`)
-
-      .replace(/\n\s*img:\s?(.+)/g, `<div class="image"><img src="/asset/$1" /></div>`)
-
+      .replace(/(\n\s*)img:\s?(.+)/g, `$1<div class="image"><img src="$2" /></div>`)
       .replace(/(\n\s*)(button)\[(.+)\]:\s(.+)/g, '$1<button class="btn $2" title="$3" data-button="$4">$3</button>')
 
       // cmd/tty tag parser
