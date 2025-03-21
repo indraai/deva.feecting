@@ -1,7 +1,7 @@
 {
   "id": 5461868899003,
   "name": "@indra.ai/deva.feecting",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "author": "Quinn Michaels",
   "license": "MIT",
   "description": "The Feecting Deva manages all the parsing of feecting language in deva.world.",
@@ -113,6 +113,6 @@
         "talker": "Talking events",
         "finish": "Finished"
       }
-    }   
+    }
   }
 }
