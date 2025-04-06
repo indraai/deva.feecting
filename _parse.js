@@ -95,7 +95,7 @@ class Parser {
 
       // image processing regex
       .replace(/(\n\s*)img:\s?(.+)/g, `$1<div class="image"><img src="$2" /></div>`)
-      .replace(/(\n\s*)(button)\[(.+)\]:\s(.+)/g, '$1<button class="btn $2" title="$3" data-button="$4">$3</button>')
+      .replace(/(\n\s*)(button)\[(.+)\]:\s?(.+)/g, '$1<button class="btn $2" title="$3" data-button="$4">$3</button>')
 
       // cmd/tty tag parser
       .replace(/(\n\s*)(cmd|tty):\s?(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2" data-$2="$3"></button>$3</span></div>`)
