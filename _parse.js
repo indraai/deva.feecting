@@ -102,8 +102,8 @@ class Parser {
       
       .replace(/(\s\n*)(cmd|tty)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2 $4" data-$2="$4">$3</button></span></div>`)
 
-      .replace(/(\s\n*)(law):(.+)\r?/g, `$1<div class="item $2"><button class="label" data-$2="#legal add $3">$2</button><span class="value">$3</span></div>`)
-      .replace(/(\s\n*)(law)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><button class="label" data-$2="#legal add:$3 $4">$2</button><span class="value">$4</span></div>`)
+      // .replace(/(\s\n*)(law):(.+)\r?/g, `$1<div class="item $2"><button class="label" data-$2="#legal add $3">$2</button><span class="value">$3</span></div>`)
+      // .replace(/(\s\n*)(law)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><button class="label" data-$2="#legal add:$3 $4">$2</button><span class="value">$4</span></div>`)
 
       .replace(/(\n\s*)(\d+)\. (.+)/g, `$1<div class="number-item" data-label="$2">$3</div>`)
       .replace(/(\n\s*)> (.+)\r?/g, `$1<div class="list-item">$2</div>`)
