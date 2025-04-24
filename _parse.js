@@ -141,7 +141,7 @@ class Parser {
 
       .replace(/(\n\s*)(p|div|span|h1|h2|h3|h4|h5|article|section|br):\s?(.+)/gi, `$1<$2>$3</$2>`)
 
-      .replace(/(\n\s*)(\w+):\s(.+)/gi, `$1<div class="item $1"><span class="label">$2</span><span class="value">$3</span></div>`)
+      .replace(/(\n\s*)(\w+):\s(.+)/gi, `$1<div class="item $2"><span class="label">$2</span><span class="value">$3</span></div>`)
 
 
       // strong format
@@ -159,7 +159,7 @@ class Parser {
     // Reference to https://github.com/sindresorhus/ansi-regex
     let cssStyle = [];
     if (this.vars.bgcolor) cssStyle.push(`--browser-item-bgcolor:${this.vars.bgcolor.value}`);
-    if (this.vars.bg) cssStyle.push(`--browser-item-image: url(${this.vars.bg.value})`);
+    if (this.vars.bg) cssStyle.push(`--browser-item-background: url(${this.vars.bg.value})`);
     if (this.vars.color) cssStyle.push(`--browser-item-color: ${this.vars.color.value}`);
     if (this.vars.size) cssStyle.push(`--browser-item-size: ${this.vars.size.value}`);
 

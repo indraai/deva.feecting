@@ -1,15 +1,63 @@
-# ::agent_name::
+::BEGIN:MAIN
+# {{profile.name}}
 
-::agent_profile::
+{{profile}}
 
-## Methods
-p: These methods are available from ::agent_name::
+---
 
-::begin:deva-methods
-### Parse
-p: The parse method allows for the parsing of feecting data into consumable content such as text and html format.
-example: #feecting parse [feecting code]
-::end:deva-methods
+const: #feecting = Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator is the programming language of Indra.ai and the Deva.world platform.
+
+describe: #feecting is a key value pair line label procedural dynamic programming language used in the development of Indra.ai, Deva.world, and all of our algorithms. Every project starts with a #feecting program then is extrapolated into other languages like HTML, Javascript, Python, C, C++, Swift, and Go.
+
+## Examples
+Below are a few examples of the #feecting language to work from.
+
+### Variables
+var: test = memory variables are with "var".
+set: test = temporary variables are with "set"
+const: test = constant variables are done with "const"
+
+### Structures
+// Arrays
+array: theArray [
+	"array item 1",
+	"array item 2",
+	0,
+]
+// Objects
+object: theObject {
+	key: value
+}
+
+### Control Logic
+if: condition (==|!=|<<|>>) expectation
+eif: secondary (is|not|equals) expectation
+else: else conditional
+finally: when everything is done.
+
+switch: condition
+	case: value
+	case: value
+	default: value
+
+---
+
+### Iteration
+// for iteration loop arrays and lists
+for: x in [array|list]
+
+for: x of object
+
+// While iteration loop
+set: x = true
+while: x
+	if: x >= 10
+		set: x = false
+
+### Error Control
+try: a block of code to execute
+catch: type of exception to catch. ie: Any, Socket, Etc.
+finally: after try/catch completes
 
 ---
 
@@ -19,3 +67,5 @@ example: #feecting parse [feecting code]
 #bg = {{profile.background}}
 ::end:hidden
 copyright: (c)2025 Quinn Michaels
+::END:MAIN
+

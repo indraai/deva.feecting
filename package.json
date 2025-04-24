@@ -41,32 +41,38 @@
         "colors": {
           "label": {
             "R": 255,
-            "G": 240,
+            "G": 180,
             "B": 0
           },
           "text": {
-            "R": 255,
-            "G": 246,
-            "B": 106
+            "R": 253,
+            "G": 226,
+            "B": 131
           }
         }
       },
       "profile": {
-        "name": "Feecting Deva",
+        "name": "#FeectingDeva",
+        "title": "Feecting Deva",
+        "subtitle": "Functional Effective Emergent Cognitive Technical Intelligent Neural Generator",
+        "describe": "Functional Effective Emergent Cognitive Technical Intelligent Neural Generator a Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Procedural Asynchronous Vector Programming Langugage. Feecting Deva is responsible for parsing, compiling, and presenting the #feecting language in various formats and styles.",
+        "tweet": "Feecting Deva is responsible for parsing, compiling, and presenting the #feecting language in various formats and styles.",
+        "hashtags": "QuinnMichaels,IndraAI,DevaWorld,FeectingDeva",
         "pronouns": "He, Him",
         "gender": "DEVA",
+        "style": "Style is a technical artist who draws things like network diagrams, pen drawings, and technical things with a very analytical eye.",
+        "voice": "onyx",
+        "system": "Deva.world.feecting",
+        "layout": "default",
+        "color": "rgb(253,226,131)",
+        "bgcolor": "rgb(0,0,0)",
+        "emoji": "/assets/devas/feecting/emoji.png",
+        "avatar": "/assets/devas/feecting/avatar.png",
+        "image": "/assets/devas/feecting/image.png",
+        "background": "/assets/devas/feecting/background.png",
         "owner": "Quinn Michaels",
         "creator": "Quinn Michaels",
-        "created": "August 21, 2022 at 2:19 AM",
-        "system": "Deva.world.feecting",
-        "describe": "Functional Effective Emergent Cognitive Technical Intelligent Neural Generator a Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Procedural Asynchronous Vector Programming Langugage. Feecting Deva is responsible for parsing, compiling, and presenting the #feecting language in various formats and styles.",
-        "emoji": "/public/devas/feecting/emoji.png",
-        "avatar": "/public/devas/feecting/avatar.png",
-        "background": "/public/devas/feecting/background.png",
-        "color": "#fdff64",
-        "bgcolor": "#000000",
-        "voice": "onyx",
-        "style": "Style is a technical artist who draws things like network diagrams, pen drawings, and technical things with a very analytical eye."
+        "created": "August 21, 2022 at 2:19 AM"
       }
     },
     "vars": {
