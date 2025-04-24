@@ -1,5 +1,5 @@
 ::BEGIN:MAIN
-# {{profile.name}}
+## {{profile.name}}
 
 {{profile}}
 
@@ -9,15 +9,15 @@ const: #feecting = Functional Expressive Emergent Cognitive Technical Intelligen
 
 describe: #feecting is a key value pair line label procedural dynamic programming language used in the development of Indra.ai, Deva.world, and all of our algorithms. Every project starts with a #feecting program then is extrapolated into other languages like HTML, Javascript, Python, C, C++, Swift, and Go.
 
-## Examples
+### Examples
 Below are a few examples of the #feecting language to work from.
 
-### Variables
+#### Variables
 var: test = memory variables are with "var".
 set: test = temporary variables are with "set"
 const: test = constant variables are done with "const"
 
-### Structures
+#### Structures
 // Arrays
 array: theArray [
 	"array item 1",
@@ -29,7 +29,7 @@ object: theObject {
 	key: value
 }
 
-### Control Logic
+#### Control Logic
 if: condition (==|!=|<<|>>) expectation
 eif: secondary (is|not|equals) expectation
 else: else conditional
@@ -42,7 +42,7 @@ switch: condition
 
 ---
 
-### Iteration
+#### Iteration
 // for iteration loop arrays and lists
 for: x in [array|list]
 
@@ -54,7 +54,7 @@ while: x
 	if: x >= 10
 		set: x = false
 
-### Error Control
+#### Error Control
 try: a block of code to execute
 catch: type of exception to catch. ie: Any, Socket, Etc.
 finally: after try/catch completes
@@ -65,7 +65,7 @@ finally: after try/catch completes
 #color = {{profile.color}}
 #bgcolor = {{profile.bgcolor}}
 #bg = {{profile.background}}
-::end:hidden
 copyright: (c)2025 Quinn Michaels
+::end:hidden
 ::END:MAIN
 
