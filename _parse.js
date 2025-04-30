@@ -72,14 +72,14 @@ class Parser {
       .replace(/(\n\s*)##\s(.+)/g, `$1<h2>$2</h2>`)
       .replace(/(\n\s*)#\s(.+)/g, `$1<h1>$2</h1>`)
 
-      .replace(/(\n\s*)={4,}\n/g, `$1<hr class="double xsmall" />`)
-      .replace(/(\n\s*)={3}\n/g, `$1<hr class="double small" />`)
-      .replace(/(\n\s*)={2}\n/g, `$1<hr class="double medium" />`)
-      .replace(/(\n\s*)={1}\n/g, `$1<hr class="double large" />`)
-      .replace(/(\n\s*)-{4,}\n/g, `$1<hr class="single xsmall"/>`)
-      .replace(/(\n\s*)-{3}\n/g, `$1<hr class="single small"/>`)
-      .replace(/(\n\s*)-{2}\n/g, `$1<hr class="single medium"/>`)
-      .replace(/(\n\s*)-{1}\n/g, `$1<hr class="single large"/>`)
+      .replace(/(\n\s*)={4,}(\n)/g, `$1<hr class="double xsmall" />$2`)
+      .replace(/(\n\s*)={3}(\n)/g, `$1<hr class="double small" />$2`)
+      .replace(/(\n\s*)={2}(\n)/g, `$1<hr class="double medium" />$2`)
+      .replace(/(\n\s*)={1}(\n)/g, `$1<hr class="double large" />$2`)
+      .replace(/(\n\s*)-{4,}(\n)/g, `$1<hr class="single xsmall"/>$2`)
+      .replace(/(\n\s*)-{3}(\n)/g, `$1<hr class="single small"/>$2`)
+      .replace(/(\n\s*)-{2}(\n)/g, `$1<hr class="single medium"/>$2`)
+      .replace(/(\n\s*)-{1}(\n)/g, `$1<hr class="single large"/>$2`)
 
       .replace(/(\*\*|__)(?=(?:(?:[^`]*`[^`\r\n]*`)*[^`]*$))(?![^\/<]*>.*<\/.+>)(.*?)\1/gi, `<strong>$2</strong>`)
       .replace(/```(.*?)```/sg, '\n<pre><code>$1</code></pre>\n')
@@ -95,6 +95,7 @@ class Parser {
 
       // image processing regex
       .replace(/(\n\s*)img:\s?(.+)/g, `$1<div class="image"><img src="$2" /></div>`)
+      .replace(/(\n\s*)thumb:\s?(.+)/g, `$1<div class="thumbnail"><img src="$2" /></div>`)
       .replace(/(\n\s*)(button)\[(.+)\]:\s?(.+)/g, '$1<button class="btn $2" title="$3" data-button="$4">$3</button>')
 
       // cmd/tty tag parser
@@ -211,19 +212,19 @@ class Parser {
 
 
     this.text = this.text.replace(/\{\{id\}\}/g, id)
-                          .replace(/\{\{today\}\}/g, formatDate(Date.now(), 'long', true))
+                        .replace(/\{\{today\}\}/g, formatDate(Date.now(), 'long', true))
                           
-                          .replace(/\{\{client\.(\w+)\}\}/g, (match,token) => {
-                            return client[token] || false;
-                          }).replace(/\{\{agent\.(\w+)\}\}/g, (match,token) => {
-                            return agent[token] || false;
-                          }).replace(/\{\{profile\.(\w+)\}\}/g, (match,token) => {
-                            return agent.profile[token] || false;
-                          }).replace(/\{\{prompt\.(\w+)\}\}/g, (match,token) => {
-                            return agent.prompt[token] || false;
-                          }).replace(/\{\{profile\}\}/g, (match,token) => {
-                            return profile || false;
-                          });
+                        .replace(/\{\{client\.(\w+)\}\}/g, (match,token) => {
+                          return client[token] || false;
+                        }).replace(/\{\{agent\.(\w+)\}\}/g, (match,token) => {
+                          return agent[token] || false;
+                        }).replace(/\{\{profile\.(\w+)\}\}/g, (match,token) => {
+                          return agent.profile[token] || false;
+                        }).replace(/\{\{prompt\.(\w+)\}\}/g, (match,token) => {
+                          return agent.prompt[token] || false;
+                        }).replace(/\{\{profile\}\}/g, (match,token) => {
+                          return profile || false;
+                        });
     return this._extractVars();
   }
 

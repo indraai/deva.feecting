@@ -28,7 +28,7 @@
   },
   "homepage": "https://deva.space/devas/feecting",
   "dependencies": {
-    "@indra.ai/deva": "^1.5.35",
+    "@indra.ai/deva": "^1.5.36",
     "needle": "^3.2.0"
   },
   "data": {
