@@ -98,10 +98,10 @@ class Parser {
       .replace(/(\n\s*)thumb:\s?(.+)/g, `$1<div class="thumbnail"><img src="$2" /></div>`)
       .replace(/(\n\s*)(button)\[(.+)\]:\s?(.+)/g, '$1<button class="btn $2" title="$3" data-button="$4">$3</button>')
 
-      // cmd/tty tag parser
-      .replace(/(\n\s*)(cmd|tty):\s?(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2" data-$2="$3"></button>$3</span></div>`)
-      
-      .replace(/(\s\n*)(cmd|tty)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2 $4" data-$2="$4">$3</button></span></div>`)
+      // // cmd/tty tag parser
+      // .replace(/(\n\s*)(cmd|tty):\s?(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2" data-$2="$3"></button>$3</span></div>`)
+      // 
+      // .replace(/(\s\n*)(cmd|tty)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><span class="label">$2</span><span class="value"><button class="btn $2" alt="$2 $4" data-$2="$4">$3</button></span></div>`)
 
       // .replace(/(\s\n*)(law):(.+)\r?/g, `$1<div class="item $2"><button class="label" data-$2="#legal add $3">$2</button><span class="value">$3</span></div>`)
       // .replace(/(\s\n*)(law)\[(.+)\]:(.+)\r?/g, `$1<div class="item $2"><button class="label" data-$2="#legal add:$3 $4">$2</button><span class="value">$4</span></div>`)
