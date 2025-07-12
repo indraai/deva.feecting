@@ -162,6 +162,8 @@ class Parser {
     if (this.vars.bgcolor) cssStyle.push(`--browser-item-bgcolor:${this.vars.bgcolor.value}`);
     if (this.vars.bg) cssStyle.push(`--browser-item-background: url(${this.vars.bg.value})`);
     if (this.vars.color) cssStyle.push(`--browser-item-color: ${this.vars.color.value}`);
+    if (this.vars.highlight) cssStyle.push(`--browser-item-highlight: ${this.vars.highlight.value}`);
+    if (this.vars.shadow) cssStyle.push(`--browser-item-shadow: ${this.vars.shadow.value}`);
     if (this.vars.size) cssStyle.push(`--browser-item-size: ${this.vars.size.value}`);
 
     if (cssStyle.length) {
