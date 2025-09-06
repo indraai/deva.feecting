@@ -18,7 +18,8 @@
       "url": "https://patreon.com/rahulaclub"
     }
   ],
-  "copyright": "(c)2025 Quinn Michaels; All rights reserved.",
+  "description": "The Feecting Deva is responsible for parsing the #feecting programming language.",
+  "copyright": "(c)2025 Quinn A Michaels; All rights reserved.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -39,7 +40,7 @@
   "bugs": {
     "url": "https://github.com/indraai/deva.feecting/issues"
   },
-  "homepage": "https://deva.space/devas/feecting",
+  "homepage": "https://indra.ai",
   "dependencies": {
     "@indra.ai/deva": "^1.5.56",
     "needle": "^3.2.0"
