@@ -1,5 +1,5 @@
 {
-  "id": 5461868899003,
+  "id": "19515610679866371404",
   "name": "@indra.ai/deva.feecting",
   "version": "0.0.56",
   "license": "VLA LICENSE.md",
@@ -46,7 +46,7 @@
   },
   "data": {
     "agent": {
-      "id": 5461868899003,
+      "id": "51037909829074452491",
       "key": "feecting",
       "prompt": {
         "emoji": "🐵",
