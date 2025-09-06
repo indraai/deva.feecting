@@ -36,6 +36,7 @@ const FEECTING = new Deva({
     parse,
     process(input) {return input.trim();},
   },
+  listeners: {},
   func: {
     /***********
       func: talk
