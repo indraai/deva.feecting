@@ -1,16 +1,15 @@
 {
   "id": "19515610679866371404",
   "name": "@indra.ai/deva.feecting",
-  "version": "0.0.70",
+  "version": "0.0.71",
   "license": "VLA:65694000411453431436 LICENSE.md",
   "VLA": {
-    "uid": 65694000411453431436,
+    "uid": 65694000411453430000,
     "time": 1757424563385,
     "date": "Tuesday, September 9, 2025 - 6:29:23 AM",
     "md5": "Im05MMwly7FGeZVkFroKog==",
     "sha256": "rpdBW1Ttf7dRSpq++h/Fl3XytkpIK4c3bamr3fv4xzQ=",
     "sha512": "EI2f2GbCIAWRQ/keNjbsRBvuxPoKUclaFWxovH6h7qXY0ZzgcquCULsWiYdkumPGz3hOpQZbgJbOQFSPe1mrWg=="
-    
   },
   "author": {
     "name": "Quinn A Michaels",
