@@ -157,7 +157,6 @@ const FEECTING = new Deva({
   }, 
   onReady(data, resolve) {
     const {VLA} = this.info();
-
     this.prompt(`${this.vars.messages.ready} > VLA:${VLA.uid}`);
     return resolve(data);
   },
