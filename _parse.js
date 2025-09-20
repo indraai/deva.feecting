@@ -1,7 +1,7 @@
 "use strict"
-// ©2025 Quinn A Michaels; All rights reserved. 
+// Copyright ©2025 Quinn A Michaels; All rights reserved. 
 // Legal Signature Required For Lawful Use.
-// Distributed under VLA:65694000411453431436 LICENSE.md
+// Distributed under VLA:33972008239221234560 LICENSE.md
 
 import fs from 'node:fs';
 import path from 'node:path';

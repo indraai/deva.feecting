@@ -1,8 +1,9 @@
 "use strict"
-// ©2025 Quinn A Michaels; All rights reserved. 
+// Copyright ©2025 Quinn A Michaels; All rights reserved. 
 // Legal Signature Required For Lawful Use.
-// Distributed under VLA:16235113947278146304 LICENSE.md
+// Distributed under VLA:33972008239221234560 LICENSE.md
 // The Feecting Deva
+
 import Deva from '@indra.ai/deva';
 import needle from 'needle';
 import pkg from './package.json' with {type:'json'};
