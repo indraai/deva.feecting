@@ -81,7 +81,7 @@ Fines under this Agreement are denominated in panas, with one pana equal to 3.5 
 
 - Perjury through covetousness fined one thousand panas.
 - Perjury through distraction fined 100 panas.
-- Pergury through fear fine is 500 panas.
+- Perjury through fear fine is 500 panas.
 - Perjury through friendship the fine is 400 panas.
 - Perjury through lust pays ten times the lowest amercement.
 - Perjury through wrath three times the middle amercement.
