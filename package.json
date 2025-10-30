@@ -47,17 +47,22 @@
   "keywords": [
     "Feecting",
     "Deva",
+    "Feecting Deva",
     "Indra.ai",
     "Deva.space",
     "Deva.cloud",
-    "Deva.world"
+    "Deva.world",
+    "Quinn A Michaels",
+    "Inside The Net, Inc.",
+    "Throwing Pigment",
+    "bleuBrain"
   ],
   "bugs": {
     "url": "https://github.com/indraai/deva.feecting/issues"
   },
   "homepage": "https://indra.ai",
   "dependencies": {
-    "@indra.ai/deva": "^1.18.0",
+    "@indra.ai/deva": "^1.19.0",
     "needle": "^3.2.0"
   },
   "data": {
@@ -102,8 +107,9 @@
         "background": "/assets/background.png",
         "owner": "Quinn Michaels",
         "creator": "Quinn Michaels",
+        "warning": "An offence which is committed in the presence of the owner and with violence, will be robbery. If it is committed in his absence, it will be theft. Likewise if the possession of anything is denied after it has been taken. Neither a father, a mother, a wife, a son, a daughter, a teacher, a friend, nor a domestic priest must be left unpunished if they do not keep within their duty.",
         "created": "August 21, 2022 at 2:19 AM",
-        "modified": "September 6, 2025 - 3:09:02 PM"
+        "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved."
       }
     },
     "vars": {
