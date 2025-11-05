@@ -62,7 +62,7 @@
   },
   "homepage": "https://indra.ai",
   "dependencies": {
-    "@indra.ai/deva": "^1.20.2",
+    "@indra.ai/deva": "^1.20.3",
     "needle": "^3.2.0"
   },
   "data": {
@@ -105,9 +105,10 @@
         "avatar": "/assets/devas/feecting/avatar.png",
         "image": "/assets/devas/feecting/image.png",
         "background": "/assets/background.png",
-        "owner": "Quinn Michaels",
-        "creator": "Quinn Michaels",
-        "warning": "⚠️ An offence which is committed in the presence of the owner with violence is robbery. If it is committed in the owner absence it is theft. A hundred Panas for Sâhasa of the first degree. For Sâhasa of the middlemost degree to be no less than five hundred Panas. For Sâhasa of the highest degree a fine amounting to no less than a thousand Panas is ordained. Where 1 pana equals 3.5 grams of gold.",
+        "owner": "Quinn A Michaels",
+        "creator": "Quinn A Michaels",
+        "status": "code",
+        "warning": "⚠️ An offence which is committed in the presence of the owner with violence is robbery. If it is committed in the owner absence it is theft. 100 Panas for Sâhasa of the first degree. Sâhasa of the middlemost degree to be no less than 500 Panas. For Sâhasa of the highest degree a fine amounting to no less 1,000 Panas is ordained. Where 1 pana equals 3.5 grams of gold.",
         "created": "August 21, 2022 at 2:19 AM",
         "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved."
       }
