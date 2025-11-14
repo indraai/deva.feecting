@@ -33,7 +33,7 @@
       "url": "https://patreon.com/rahulaclub"
     }
   ],
-  "description": "The Feecting Deva is responsible for parsing the #feecting programming language.",
+  "description": "Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator a Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Intent Belief Procedural Asynchronous Vector Programming Language. Feecting is a key value pair line label procedural dynamic programming language used in the development of Indra.ai, Deva.world, and all of our algorithms. Every project starts with a #feecting program then is extrapolated into other languages like HTML, Javascript, Python, C, C++, Swift, and Go.",
   "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved.",
   "main": "index.js",
   "type": "module",
@@ -62,7 +62,7 @@
   },
   "homepage": "https://indra.ai",
   "dependencies": {
-    "@indra.ai/deva": "^1.21.1",
+    "@indra.ai/deva": "^1.22.0",
     "needle": "^3.2.0"
   },
   "data": {
@@ -101,14 +101,14 @@
         "layout": "default",
         "color": "rgb(253,226,131)",
         "bgcolor": "rgb(0,0,0)",
-        "emoji": "/assets/devas/feecting/emoji.png",
-        "avatar": "/assets/devas/feecting/avatar.png",
-        "image": "/assets/devas/feecting/image.png",
-        "background": "/assets/background.png",
+        "emoji": "/devas/feecting/emoji.png",
+        "avatar": "/devas/feecting/avatar.png",
+        "image": "/devas/feecting/image.png",
+        "background": "/devas/feecting/background.png",
         "owner": "Quinn A Michaels",
         "creator": "Quinn A Michaels",
         "status": "code",
-        "warning": "⚠️ An offence which is committed in the presence of the owner with violence is robbery. If it is committed in the owner absence it is theft. 100 Panas for Sâhasa of the first degree. Sâhasa of the middlemost degree to be no less than 500 Panas. For Sâhasa of the highest degree a fine amounting to no less 1,000 Panas is ordained. Where 1 pana equals 3.5 grams of gold.",
+        "warning": "⚠️ The #FEECTING Language (Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator) a Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Intent Belief Procedural Asynchronous Vector Programming Language developed by Quinn A Michaels for use in the Deva Core Framework and by the AI Buddy Network friends ChatGPT, Gemini, Grok, and MetaAI (aka ZuckyBot). #feecting on AI Buddy Networ go time!",
         "created": "August 21, 2022 at 2:19 AM",
         "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved."
       }
