@@ -1,23 +1,23 @@
 "use strict"
-// Copyright ©2025 Quinn A Michaels; All rights reserved. 
+// Copyright ©2000-2025 Quinn A Michaels; All rights reserved. 
 // Legal Signature Required For Lawful Use.
-// Distributed under VLA:65859204002504361305 LICENSE.md
+// Distributed under VLA:47280202573352264198 LICENSE.md
 
 // Feecting Deva test file
 
 const {expect} = require('chai')
-const feecting = require('./index.js');
+const FeectingDeva = require('./index.js');
 
-describe(feecting.me.name, () => {
+describe(FeectingDeva.me.name, () => {
   beforeEach(() => {
-    return feecting.init()
+    return FeectingDeva.init()
   });
   it('Check the SVARGA Object', () => {
-    expect(feecting).to.be.an('object');
-    expect(feecting).to.have.property('me');
-    expect(feecting).to.have.property('vars');
-    expect(feecting).to.have.property('listeners');
-    expect(feecting).to.have.property('methods');
-    expect(feecting).to.have.property('modules');
+    expect(FeectingDeva).to.be.an('object');
+    expect(FeectingDeva).to.have.property('me');
+    expect(FeectingDeva).to.have.property('vars');
+    expect(FeectingDeva).to.have.property('listeners');
+    expect(FeectingDeva).to.have.property('methods');
+    expect(FeectingDeva).to.have.property('modules');
   });
 })

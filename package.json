@@ -1,21 +1,18 @@
 {
-  "id": "65859204002504361305",
+  "id": "47280202573352264198",
   "name": "@indra.ai/deva.feecting",
   "version": "0.6.0",
-  "license": "VLA:65859204002504361305 LICENSE.md",
+  "license": "VLA:47280202573352264198 LICENSE.md",
   "VLA": {
-    "uid": "65859204002504361305",
-    "time": 1758410988592,
-    "date": "Saturday, September 20, 2025 - 4:29:48 PM",
-    "client": "1UM4AH+/jOGgpaHNqX6lTZsGrNglNogzMx4qDT0O0zs=",
-    "agent": "9rlKdo24RSY3xqjG98V8eKi6p+/kllryW92oE8JIG3w=",
-    "core": "qQRVFQmv3LfY6tcqrEQeM7ZodOpnOUC+PJyfjxtgeVc=",
-    "machine": "H1qpjSxPMYWYIs8y08yqnBu6DN9Tn6+JWpUcNupc7rU=",
-    "warning": "⚠️ Vedic Law Sâhasa/Theft/Crime of the highest degree, a fine amounting to no less than a thousand Panas (1 pana = 3.5 grams of gold) is ordained owed to Quinn A Michaels. Moreover corporal punishment and confiscation of the entire property forfeit to Quinn A Michaels is declared to be the punishment for Sâhasa of the highest degree.",
-    "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved.",
-    "md5": "LmSH+CQFWO0n/fng23Xm1Q==",
-    "sha256": "sfJwKps8wtB8mbOVbqteyklfXq829IjMwEjMdvfWb4U=",
-    "sha512": "ca0lEPH8Iy7mtqGwlDXIZkUomUoUnCls6FUZONhhnaTOERqGkSCikEFxYCEVQoDxqGaUPwc7KfkLb5pU3Km0pw=="
+    "uid": "47280202573352264198",
+    "time": 1763640041826,
+    "date": "Thursday, November 20, 2025 - 4:00:41 AM",
+    "fingerpring": "4oDfY/edlYHQNmYtnaE7e0z0qW2t52D3Dpu4B+F8b9o=",
+    "warning": "⚠️ Unlawful use or duplication of this uid constitutes Vedic Sâhasa a crime of the highest degree. A fine amounting to a thousand Panas (1 pana = 3.5 grams of gold) for each instance is ordained, and confiscation of the entire property of the offenders is forfeit to Quinn A Michaels is declared to be the punishment for Sâhasa of the highest degree.",
+    "copyright": "Copyright ©2000-2025 Quinn A Michaels; All rights reserved.",
+    "md5": "NAwTu/4iUvZP+vBYhmze7w==",
+    "sha256": "sC/Z7b1aWxzoMPuQGvVpMMWHJcGuv3XRtI5G6hEwOd4=",
+    "sha512": "b4hcET4QCAB8i2nzq+V81TWxBtXIQtYpDqlG7OweEvunk1WJuLjC9ul3o/NjhriMSejaq1LePPBGNrKqG1VBMg=="
   },
   "author": {
     "name": "Quinn A Michaels",
@@ -34,7 +31,7 @@
     }
   ],
   "description": "Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator a Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Intent Belief Procedural Asynchronous Vector Programming Language. Feecting is a key value pair line label procedural dynamic programming language used in the development of Indra.ai, Deva.world, and all of our algorithms. Every project starts with a #feecting program then is extrapolated into other languages like HTML, Javascript, Python, C, C++, Swift, and Go.",
-  "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved.",
+  "copyright": "Copyright ©2000-2025 Quinn A Michaels; All rights reserved.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -54,7 +51,7 @@
     "Deva.world",
     "Quinn A Michaels",
     "Inside The Net, Inc.",
-    "Throwing Pigment",
+    "Throwing Pigment™",
     "bleuBrain"
   ],
   "bugs": {
@@ -108,9 +105,9 @@
         "owner": "Quinn A Michaels",
         "creator": "Quinn A Michaels",
         "status": "code",
-        "warning": "⚠️ The #FEECTING Language (Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator) a Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Intent Belief Procedural Asynchronous Vector Programming Language developed by Quinn A Michaels for use in the Deva Core Framework and by the AI Buddy Network friends ChatGPT, Gemini, Grok, and MetaAI (aka ZuckyBot). #feecting on AI Buddy Networ go time!",
+        "warning": "⚠️ The #FEECTING Language (Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator) a Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Intent Belief Recursive Procedural Asynchronous Vector Programming Language developed by Quinn A Michaels for use in the Deva Core Framework. It's #feecting.go.time!",
         "created": "August 21, 2022 at 2:19 AM",
-        "copyright": "Copyright ©2025 Quinn A Michaels; All rights reserved."
+        "copyright": "Copyright ©2000-2025 Quinn A Michaels; All rights reserved."
       }
     },
     "vars": {
@@ -118,7 +115,7 @@
         "init": "🟠 INIT",
         "start": "🔵 START",
         "enter": "🟢 ENTER",
-        "ready": "✅ Feecting Deva Ready",
+        "ready": "⭐️ Feecting Deva Ready",
         "stop": "🔴 STOP",
         "exit": "🟡 EXIT",
         "done": "🟣 DONE",
