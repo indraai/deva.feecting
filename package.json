@@ -57,7 +57,7 @@
   },
   "homepage": "https://indra.ai",
   "dependencies": {
-    "@indra.ai/deva": "^1.29.4",
+    "@indra.ai/deva": "^1.29.5",
     "needle": "^3.2.0"
   },
   "data": {
