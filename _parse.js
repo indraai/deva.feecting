@@ -179,25 +179,6 @@ class Parser {
   }
 
   /***********
-    func: _extractVars
-    describe: Recursive function to extract variables from a text string.
-    params: text - text string to extract variables from.
-  ***********/
-  _extractVars() {
-    if (!this.text) return false;
-    const reggie = this.text.match(/\n\s*(\#|\@|\$)(.+)\s?=\s?(.+)/);
-    if (!reggie) return;
-
-    this.vars[reggie[2].trim()] = {
-      type: reggie[1].trim(),
-      name: reggie[2].trim(),
-      value: reggie[3].trim(),
-    }
-    this.text = this.text.replace(reggie[0], `\nvar[${reggie[1].trim()}${reggie[2].trim()}]:${reggie[3].trim()}\r`);
-    return this._extractVars();
-  }
-
-  /***********
     func: getVars
     params: text - initial text string to get variables from.
     describe: this is a helper function to recursive _extractVars.
@@ -216,22 +197,59 @@ class Parser {
     }
     _profile.push(`::end:profile\n`);
     const profile = _profile.join('\n');
+    
+    const lookup = {
+      client, 
+      agent,
+      prompt: agent.prompt,
+      profile: agent.profile,
+      vars: data.vars,
+    }
 
+    function processVars(token, data) {
+      // first we split the token on the dot notation.
+      const token_arr = token.split('.');
+      // then if the token is only one length just return the value 
+      let current = data;
+      token_arr.forEach(item => {
+        if (!current[item]) return false;        
+        current = current[item];
+      });
 
+      current = current.replace(/\{\{(client|agent|profile|prompt|vars)\.(.+?)\}\}/g, (match, scope, token) => {
+        return processVars(token, lookup[scope]);
+      });
+
+      return current;
+    }
+    
     this.text = this.text.replace(/\{\{id\}\}/g, id)
-                        .replace(/\{\{today\}\}/g, formatDate(Date.now(), 'long', true))
-                          
-                        .replace(/\{\{client\.(\w+)\}\}/g, (match,token) => {
-                          return client[token] || false;
-                        }).replace(/\{\{agent\.(\w+)\}\}/g, (match,token) => {
-                          return agent[token] || false;
-                        }).replace(/\{\{profile\.(\w+)\}\}/g, (match,token) => {
-                          return agent.profile[token] || false;
-                        }).replace(/\{\{prompt\.(\w+)\}\}/g, (match,token) => {
-                          return agent.prompt[token] || false;
+                        .replace(/\{\{today\}\}/g, formatDate(Date.now(), 'long', true))                          
+                        .replace(/\{\{(client|agent|profile|prompt|vars)\.(.+?)\}\}/g, (match, scope, token) => {
+                          return processVars(token, lookup[scope]);
                         }).replace(/\{\{profile\}\}/g, (match,token) => {
                           return profile || false;
                         });
+    // when all the default variables and values are set then extract the vars in the local text.
+    return this._extractVars();
+  }
+
+  /***********
+    func: _extractVars
+    describe: Recursive function to extract variables from a text string.
+    params: text - text string to extract variables from.
+  ***********/
+  _extractVars() {
+    if (!this.text) return false;
+    const reggie = this.text.match(/\n\s*(\#|\@|\$)(.+)\s?=\s?(.+)/);
+    if (!reggie) return;
+  
+    this.vars[reggie[2].trim()] = {
+      type: reggie[1].trim(),
+      name: reggie[2].trim(),
+      value: reggie[3].trim(),
+    }
+    this.text = this.text.replace(reggie[0], `\nvar[${reggie[1].trim()}${reggie[2].trim()}]:${reggie[3].trim()}\r`);
     return this._extractVars();
   }
 
@@ -267,8 +285,8 @@ class Parser {
 }
 
 export default (opts) => {
-  const {meta, text, client, agent} = opts.q;
-
+  const {meta, text, client, agent, data} = opts.q;
+  const vars = data.vars || {};
   const key = agent ? agent.key : client.key;
 
   const parser = new Parser({
@@ -280,6 +298,7 @@ export default (opts) => {
     text: text.replace(/(\n)(\s*)(\W|\b)/g, '$1$3'),
     client,
     agent,
+    vars,
   });
 
   parser.getVars(opts);
