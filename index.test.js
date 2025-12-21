@@ -1,10 +1,10 @@
 "use strict"
+// Feecting Deva Test File
 // Copyright ©2000-2025 Quinn A Michaels; All rights reserved. 
 // Legal Signature Required For Lawful Use.
 // Distributed under VLA:52583635952527737176 LICENSE.md
 // Saturday, November 22, 2025 - 9:51:12 AM
 
-// Feecting Deva test file
 
 const {expect} = require('chai')
 const FeectingDeva = require('./index.js');
