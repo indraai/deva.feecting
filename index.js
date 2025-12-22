@@ -43,6 +43,8 @@ const FEECTING = new Deva({
     process(input) {return input.trim();},
   },
   listeners: {},
+  modules: {},
+  devas: {},
   func: {
     /***********
       func: talk
