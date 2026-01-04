@@ -1,11 +1,9 @@
 "use strict"
 // Feecting Deva
-// Copyright ©2000-2025 Quinn A Michaels; All rights reserved. 
+// Copyright ©2000-2026 Quinn A Michaels; All rights reserved. 
 // Legal Signature Required For Lawful Use.
-// Distributed under VLA:52583635952527737176 LICENSE.md
-// Saturday, November 22, 2025 - 9:51:12 AM
-
-// Feecting Deva
+// Distributed under VLA:63817777011592573888 LICENSE.md
+// Sunday, January 4, 2026 - 8:37:21 AM
 
 import Deva from '@indra.ai/deva';
 import needle from 'needle';
@@ -33,7 +31,7 @@ const info = {
 };
 
 import parse from './_parse.js';
-const FEECTING = new Deva({
+const FeectingDeva = new Deva({
   info,
   agent,
   vars,
@@ -172,4 +170,4 @@ const FEECTING = new Deva({
     return reject(err);
   }
 });
-export default FEECTING
+export default FeectingDeva

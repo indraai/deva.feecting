@@ -1,16 +1,16 @@
 {
-  "id": "52583635952527737176",
+  "id": "63817777011592573888",
   "name": "@indra.ai/deva.feecting",
   "version": "0.12.0",
-  "license": "VLA:52583635952527737176 LICENSE.md",
+  "license": "VLA:63817777011592573888 LICENSE.md",
   "VLA": {
-    "uid": "52583635952527737176",
-    "time": 1763787367564,
-    "date": "Friday, November 21, 2025 - 8:56:07 PM",
-    "warning": "⚠️ Unlawful use or duplication of this uid constitutes Vedic Sâhasa a crime of the highest degree. A fine amounting to a thousand Panas (1 pana = 3.5 grams of gold) for each instance is ordained, and confiscation of the entire property of the offenders is forfeit to Quinn A Michaels is declared to be the punishment for Sâhasa of the highest degree.",
-    "license": "46220923248993739422",
-    "fingerprint": "Z4T/jcZVz/E3I+MJsuGw8nZhweYQsqyIycmdrWgAVWQ=",
-    "copyright": "Copyright ©2000-2025 Quinn A Michaels; All rights reserved."
+    "uid": "63817777011592573888",
+    "time": 1767544641276,
+    "date": "Sunday, January 4, 2026 - 8:37:21 AM",
+    "warning": "🪪 #LicenseDeva warns #UnlawfulUse or #Duplication constitutes #VedicSahasa a #Crime of the #HighestDegree. A #Fine amounting to 1000 #Panas (1 pana = 3.5 grams of gold) for each #Instance has been #Ordained the #Punishment for #Sahasa of the #HighestDegree. #Quinn #QuinnMichaels #IndraAI #DevaWorld #LicenseDeva #VedicLicenseAgreement",
+    "license": "44486733861528360966",
+    "fingerprint": "yo8+JrcbZwh/497SOxVnBwrwwNUzuHeNDOaXXLfkooU=",
+    "copyright": "Copyright ©2000-2026 Quinn A Michaels; All rights reserved."
   },
   "author": {
     "name": "Quinn A Michaels",
@@ -29,7 +29,7 @@
     }
   ],
   "description": "Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator a Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Intent Belief Procedural Asynchronous Vector While True Programming Language. Feecting is a key value pair line label procedural dynamic programming language used in the development of Indra.ai, and Deva.world to express concepts and design advanced algorithms. Every project starts with a #feecting program then is extrapolated into other languages like HTML, Javascript, Python, C, C++, Swift, and Go.",
-  "copyright": "Copyright ©2000-2025 Quinn A Michaels; All rights reserved.",
+  "copyright": "Copyright ©2000-2026 Quinn A Michaels; All rights reserved.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -88,7 +88,7 @@
         "subtitle": "Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator",
         "describe": "Parsing, compiling, and presenting the #feecting language in various formats.",
         "tweet": "Feecting Deva is responsible for parsing the #feecting language in various formats.",
-        "hashtags": "QuinnMichaels,IndraAI,DevaWorld,FeectingDeva",
+        "hashtags": "#Feecting #Quinn #QuinnMichaels #IndraAI #DevaWorld #FeectingDeva",
         "pronouns": "He, Him, His",
         "gender": "DEVA",
         "style": "A fun but professional personality who is always happy to teach about #feecting.",
@@ -104,10 +104,10 @@
         "owner": "Quinn A Michaels",
         "creator": "Quinn A Michaels",
         "status": "code",
-        "warning": "⚠️ The #feecting Language (Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator) a Containerized Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Intent Belief Recursive Procedural Asynchronous Vector While True Programming Language developed by Quinn A Michaels for use in the Inside The Net, Inc. Indra.ai Deva Core Framework. It's #feecting.go.time!",
-        "copyright": "Copyright ©2000-2025 Quinn A Michaels; All rights reserved.",
+        "warning": "{{prompt.emoji}} The #feecting Language (Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator) a Containerized Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Intent Belief Recursive Procedural Asynchronous Vector While True Programming Language developed by Quinn A Michaels for use in the Inside The Net Indra.ai Deva Core Framework. It's #feecting.go.time! {{profile.hashtags}}",
+        "copyright": "Copyright ©2000-2026 Quinn A Michaels; All rights reserved.",
         "created": "August 21, 2022 at 2:19 AM",
-        "updated": "Saturday, November 22, 2025 - 9:51:12 AM"
+        "updated": "Sunday, January 4, 2026 - 8:37:21 AM"
       }
     },
     "vars": {
@@ -115,7 +115,7 @@
         "init": "🟠 INIT",
         "start": "🔵 START",
         "enter": "🟢 ENTER",
-        "ready": "⭐️ Feecting Deva Ready",
+        "ready": "🏄 Feecting Deva Ready",
         "stop": "🔴 STOP",
         "exit": "🟡 EXIT",
         "done": "🟣 DONE",
