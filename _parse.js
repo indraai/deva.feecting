@@ -216,12 +216,20 @@ class Parser {
         if (!current[item]) return false;        
         current = current[item];
       });
-
-      current = current.replace(/\{\{(client|agent|profile|prompt|vars)\.(.+?)\}\}/g, (match, scope, token) => {
-        return processVars(token, lookup[scope]);
-      });
-
-      return current;
+      try {
+        current = current.replace(/\{\{(client|agent|profile|prompt|vars)\.(.+?)\}\}/g, (match, scope, token) => {
+          return processVars(token, lookup[scope]);
+        });        
+      } 
+      catch (err) {
+        
+        console.log('TOKEN\n', token);
+        console.log('CURRENT\n', current);
+        console.log('ERROR\n', err);
+      }
+      finally {
+        return current;      
+      }
     }
     
     this.text = this.text.replace(/\{\{id\}\}/g, id)
