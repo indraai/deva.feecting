@@ -5,9 +5,9 @@
 // Sunday, January 4, 2026 - 8:37:21 AM
 
 ::BEGIN:MAIN
-# {{agent.name}}
+# {{profile.name}}
 
-{{profile}}
-
+describe: {{profile.describe}}
+hashtags: {{profile.hashtags}}
 copyright: {{profile.copyright}}
 ::END:MAIN
