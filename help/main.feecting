@@ -81,8 +81,10 @@ for: (key, value) of object {
 // While iteration loop
 let: x = true
 while: x {
-	if: x >= 10
+	if: x >= 10 {
 		set: x = false
+	}
+	x = x++
 }
 ::end:code:iteration
 #### Error Control
@@ -114,11 +116,11 @@ p: #feecting most unique feature is the talk command that allows the system to b
 
 ## Dynmaic UID
 // generate a dynamic uid when the help file is rendered.
-talk: #feecting uid
+`talk: #feecting uid`
 
 ## License
 // this talk event inserts the license into the main help file.
-talk: #feecting help main:license
+`talk: #feecting help main:license`
 
 ::begin:hidden
 #color = {{profile.color}}

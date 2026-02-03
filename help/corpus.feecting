@@ -9,5 +9,115 @@
 
 describe: {{profile.describe}}
 hashtags: {{profile.hashtags}}
+owner: {{profile.owner}}
+creator: {{profile.creator}}
+
+## Line Labels
+p: The first and most basic part of the feecting language is the line labels. There are standard line labels like talk or p that create events and formatting. Also dynamic custom line labels can be used.
+
+## Containers
+p: Containers establish the main outer structure of the code components where several main containers can be in a script but Containers can contain Blocks but not other Containers.
+::BEGIN:[KEY]:[TRANSPORT]
+// feecting code
+::END:[KEY]:[TRANSPORT]
+
+## Boxes
+p: Boxes are isolated, and can be nested inside Containers or other Blocks to create structure and heiarcharcy. 
+
+::begin:[key]:[opts]:[transport]
+// feecting code
+::end:[key]:[opts]:[transport]
+
+## Variables
+
+var: test = memory variables are with "var"
+set: test = temporary variables are with "set"
+const: test = constant variables are done with "const"
+
+## Structures
+// Arrays
+array: theArray [
+	"array item 1",
+	"array item 2",
+	0,
+]
+// Objects
+object: theObject {
+	key: value
+}
+
+## Control Logic
+
+if: condition (==|!=|<<|>>) expectation
+elseif: secondary (is|not|equals) expectation
+else: conditional
+finally: when everything is done.
+
+switch: condition
+	case: value
+	case: value
+	default: value
+
+## Iteration
+p: #feecting provides several methods for looping over a lists, arrays, objects, and the while true iteration loop. This provides a simplified way to create complex loops over a list of values, and array if indees or an object of key value pairs. 
+
+::begin:code:iteration
+// for iteration loop an array
+for: (item, index) in array {
+	// code to execute inside for loop
+}
+// for iteration to loop over a list
+for: item in list {
+	// code to execute inside for loop
+}
+
+for: (key, value) of object {
+	// code to execute inside loop
+}
+
+// While iteration loop
+let: x = true
+while: x {
+	if: x >= 10 {
+		set: x = false
+	}
+	x = x++
+}
+::end:code:iteration
+## Error Control
+p: #feecting provides a clean way to manage errors in the language where try, catch, and finally are situated in the line label architecture that integrates directly into the Deva Core Error Management Infrastructure.
+
+::begin:code:error
+try: {
+	a block of code to execute in a string or bracket container.
+}
+catch: err {
+	type of exception to catch. ie: Any, Socket, Etc.
+} 
+finally: {
+	after try/catch completes
+}
+::end:code:error
+
+## Talking
+p: #feecting most unique feature is the talk command that allows the system to become the Code Talker where a feecting script can while processing logic or code asychronously talk to other Agents and Entities in the system. 
+
+::begin:code:talking
+// This talk get's a uid from the License Deva
+`talk: #license uid`
+// This talk get's the Veda Hymn 09003
+`talk: #veda hymn:09003`
+// This talk get's the main security help content.
+`talk: #security help`
+::end:code:talking
+
+## Dynmaic UID
+// generate a dynamic uid when the help file is rendered.
+`talk: #feecting uid`
+
+## License
+// this talk event inserts the license into the main help file.
+`talk: #feecting help main:license`
+
 copyright: {{profile.copyright}}
 ::END:MAIN
