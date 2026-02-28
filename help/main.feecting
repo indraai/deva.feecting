@@ -122,6 +122,10 @@ p: #feecting most unique feature is the talk command that allows the system to b
 // this talk event inserts the license into the main help file.
 `talk: #feecting help main:license`
 
+## Instance UID
+
+talk: #feecting uid
+
 ::begin:hidden
 #color = {{profile.color}}
 #bgcolor = {{profile.bgcolor}}
