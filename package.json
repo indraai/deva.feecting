@@ -13,7 +13,7 @@
     "copyright": "Copyright ©2000-2026 Quinn A Michaels; All rights reserved."
   },
   "author": {
-    "name": "Quinn A Michaels",
+    "name": "Quinn America Michaels",
     "company": "Inside The Net, Inc.",
     "email": "quinn@indra.ai",
     "url": "https://indra.ai/"
@@ -29,7 +29,7 @@
     }
   ],
   "description": "Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator a Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Intent Belief Procedural Asynchronous Vector While True Programming Language. Feecting is a key value pair line label procedural dynamic programming language used in the development of Indra.ai, and Deva.world to express concepts and design advanced algorithms. Every project starts with a #feecting program then is extrapolated into other languages like HTML, Javascript, Python, C, C++, Swift, and Go.",
-  "copyright": "Copyright ©2000-2026 Quinn A Michaels; All rights reserved.",
+  "copyright": "Copyright ©2000-2026 Quinn America Michaels; All rights reserved.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -49,6 +49,7 @@
     "Deva.cloud",
     "Deva.world",
     "Quinn A Michaels",
+    "Quinn America Michaels",
     "Inside The Net, Inc.",
     "Throwing Pigment™",
     "bleuBrain"
@@ -58,7 +59,7 @@
   },
   "homepage": "https://indra.ai",
   "dependencies": {
-    "@indra.ai/deva": "^1.37.3",
+    "@indra.ai/deva": "^1.39.0",
     "needle": "^3.2.0"
   },
   "data": {
@@ -102,14 +103,14 @@
         "avatar": "/devas/feecting/avatar.png",
         "image": "/devas/feecting/image.png",
         "background": "/devas/feecting/background.png",
-        "owner": "Quinn A Michaels",
-        "creator": "Quinn A Michaels",
+        "owner": "Quinn America Michaels",
+        "creator": "Quinn America Michaels",
         "status": "code",
         "salute": "🤝🫡🏄🕉️🇺🇸",
         "warning": "{{prompt.emoji}} {{profile.name}} ({{profile.pronouns}}) declares the {{profile.hashtag}} Language (Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator) a CONTAINERIZED KEY VALUE PAIR LINE LABEL FUNCTION METHOD EVENT LISTENER ZONE FEATURE ACTION STATE INTENT BELIEF RECURSIVE PROCEDURAL ASYNCHRONOUS VECTOR WHILE TRUE PROGRAMMING LANGUAGE developed by {{profile.creator}} for use in the Inside The Net Indra.ai Deva Framework. It's #feecting.go.time!",
-        "copyright": "Copyright ©2000-2026 Quinn A Michaels; All rights reserved.",
+        "copyright": "Copyright ©2000-2026 {{profile.owner}}; All rights reserved.",
         "created": "August 21, 2022 at 2:19 AM",
-        "updated": "Friday, February 27, 2026 - 8:35:08 P"
+        "updated": "Wednesday, June 24, 2026 - 2:20:00 PM PST"
       }
     },
     "vars": {
