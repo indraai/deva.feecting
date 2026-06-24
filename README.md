@@ -6,7 +6,7 @@ The Feecting Deva
 
 `const feecting = require('@indra.ai/deva.feecting')`;
 
-Copyright ©2000-2026 Quinn A Michaels; All rights reserved.  
+Copyright ©2000-2026 Quinn America Michaels; All rights reserved.  
 Legal Signature Required For Lawful Use.  
-Distributed under VLA:52583635952527737176 LICENSE.md  
-Saturday, November 22, 2025 - 9:51:12 AM
+Distributed under VLA:32181316846394046530 LICENSE.md  
+Wednesday, June 24, 2026 - 4:20:52 PM PST
