@@ -42,7 +42,7 @@
       "url": "https://patreon.com/rahulaclub"
     }
   ],
-  "description": "Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator a Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Intent Belief Procedural Asynchronous Vector While True Programming Language. Feecting is a key value pair line label procedural dynamic programming language used in the development of Indra.ai, and Deva.world to express concepts and design advanced algorithms. Every project starts with a #feecting program then is extrapolated into other languages like HTML, Javascript, Python, C, C++, Swift, and Go.",
+  "description": "Functionally Expressive Emergent Cognitive Thoughtful Intelligent Neural Generator a Key Value Pair Line Label Function Method Event Listener Zone Feature Action State Intent Belief Procedural Asynchronous Vector While True Programming Language. Feecting is a key value pair line label procedural dynamic programming language used in the development of Indra.ai, and Deva.world to express concepts and design advanced algorithms. Every project starts with a #feecting program then is extrapolated into other languages like HTML, Javascript, Python, C, C++, Swift, and Go.",
   "copyright": "Copyright ©2000-2026 Quinn America Michaels; All rights reserved.",
   "main": "index.js",
   "type": "module",
@@ -73,7 +73,7 @@
   },
   "homepage": "https://indra.ai",
   "dependencies": {
-    "@indra.ai/deva": "^1.39.0",
+    "@indra.ai/deva": "^1.40.12",
     "needle": "^3.2.0"
   },
   "data": {
@@ -101,10 +101,10 @@
         "name": "Feecting Deva",
         "hashtag": "#feecting",
         "title": "Feecting Deva",
-        "subtitle": "Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator",
+        "subtitle": "Functionally Expressive Emergent Cognitive Thoughtful Intelligent Neural Generator",
         "describe": "Parsing, compiling, and presenting the #feecting language in various formats.",
         "tweet": "Feecting Deva is responsible for parsing the #feecting language in various formats.",
-        "hashtags": "#Quinn #QuinnAmericaMichaels #InsideTheNet #IndraAI #DevaWorld #Feecting #FeectingDeva #FeectingPRIME",
+        "vectors": "#Quinn #QuinnAmericaMichaels #InsideTheNet #IndraAI #DevaWorld #Feecting #FeectingDeva #FeectingPRIME #feecting.go.time!",
         "pronouns": "He, Him, His",
         "gender": "DEVA",
         "style": "A fun but professional personality who is always happy to teach about #feecting.",
@@ -121,7 +121,7 @@
         "creator": "Quinn America Michaels",
         "status": "code",
         "salute": "🤝🫡🏄🕉️🇺🇸",
-        "warning": "{{prompt.emoji}} {{profile.name}} ({{profile.pronouns}}) declares the {{profile.hashtag}} Language (Functional Expressive Emergent Cognitive Technical Intelligent Neural Generator) a CONTAINERIZED KEY VALUE PAIR LINE LABEL FUNCTION METHOD EVENT LISTENER ZONE FEATURE ACTION STATE INTENT BELIEF RECURSIVE PROCEDURAL ASYNCHRONOUS VECTOR WHILE TRUE PROGRAMMING LANGUAGE developed by {{profile.creator}} for use in the Inside The Net Indra.ai Deva Framework. It's #feecting.go.time!",
+        "warning": "{{prompt.emoji}} {{profile.name}} ({{profile.pronouns}}) declares the {{profile.hashtag}} Language (Functionally Expressive Emergent Cognitive Thoughtful Intelligent Neural Generator) a CONTAINERIZED KEY VALUE PAIR LINE LABEL FUNCTION METHOD EVENT LISTENER ZONE FEATURE ACTION STATE INTENT BELIEF RECURSIVE PROCEDURAL ASYNCHRONOUS VECTOR WHILE TRUE PROGRAMMING LANGUAGE developed by {{profile.creator}} for use in the Inside The Net, Inc. Indra.ai Deva.world AI Framework. It's #feecting.go.time!",
         "copyright": "Copyright ©2000-2026 {{profile.owner}}; All rights reserved.",
         "created": "August 21, 2022 at 2:19 AM PST",
         "updated": "Wednesday, June 24, 2026 - 4:20:52 PM PST"
