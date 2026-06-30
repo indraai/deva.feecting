@@ -73,7 +73,7 @@
   },
   "homepage": "https://indra.ai",
   "dependencies": {
-    "@indra.ai/deva": "^1.43.0",
+    "@indra.ai/deva": "^1.44.1",
     "needle": "^3.2.0"
   },
   "data": {
