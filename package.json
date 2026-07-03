@@ -1,31 +1,31 @@
 {
-  "id": "45895393515269959140",
+  "id": "69292805261668637101",
   "name": "@indra.ai/deva.feecting",
   "version": "0.22.2",
-  "license": "VLA:45895393515269959140 LICENSE.md",
+  "license": "VLA:69292805261668637101 LICENSE.md",
   "VLA": {
-    "uid": "45895393515269959140",
-    "time": 1783099939867,
-    "iso": "2026-07-03T17:32:19.867Z",
-    "utc": "Fri, 03 Jul 2026 17:32:19 GMT",
-    "date": "Friday, July 3, 2026 - 10:32:19 AM",
-    "license": "51523651576536779717",
-    "fingerprint": "Fe90Hv2DE+p8aK0pvQGNu8uk7F+S/GUL1WbJxDNWB8Y=",
+    "uid": "69292805261668637101",
+    "time": 1783102716527,
+    "iso": "2026-07-03T18:18:36.527Z",
+    "utc": "Fri, 03 Jul 2026 18:18:36 GMT",
+    "date": "Friday, July 3, 2026 - 11:18:36 AM",
+    "license": "12381995424727149809",
+    "fingerprint": "8QpJjIoiB0Lbfh9lf8ua1wVQSitgCg+6Gbp7w+njTWs=",
     "client": "r6GDRq0oPNzsk63NPFqdM0/xLS3/FK+6B3FsDIP4h9U=",
-    "agent": "c1vN9BSox9aABfNzHLntHsfCSqSK4zZszFBPqxHLvqY=",
-    "machine": "jY99nhj95XPilpd4nzb/F08NpqaH/wbYEKBHZO45sBY=",
-    "core_hash": "MiviLwGps3eo9yhcSVFJ3vDiqzaWgHMjSaEzi4pTKJs=",
+    "agent": "KdMX1yebO7nJjJWFSmg7+rTRIYSQRdA/vPfwG7JnbNc=",
+    "machine": "02v6whhEE2kAAxRzmOfu6F6q5tnFIMlpDvSTvKp2FwE=",
+    "core_hash": "4ipTScvBdva+4PgaFnXwctKEYmv21Gb8aS49TflP3Ls=",
     "status": "vedic",
-    "warning": "🪪 License Deva declares UNLAWFUL  [object Object] constitutes VEDIC SAHASA a CRIME of the HIGHEST DEGREE. A FINE amounting to 1000 PANAS (1 pana = 3.5 grams of gold) for each INSTANCE has been ORDAINED the PUNISHMENT for SAHASA of the HIGHEST DEGREE.",
+    "warning": "🪪 License Deva declares UNLAWFUL USE, MODIFICATION, INSTALLATION, DUPLICATION, DISTRIBUTION, INTERACTION, or IMPLEMENTATION constitutes VEDIC SAHASA a CRIME of the HIGHEST DEGREE. A FINE amounting to 1000 PANAS (1 pana = 3.5 grams of gold) for each INSTANCE has been ORDAINED the PUNISHMENT for SAHASA of the HIGHEST DEGREE.",
     "notice": "Any USE or INTERACTION with License Deva constitutes EXPLICIT CONSENT and AGREEMENT to be RULED and GOVERNED ACCORDING to the LAWS of the VEDIC RELIGION.",
     "vectors": "#Quinn #QuinnArjunaMichaels #InsideTheNet #IndraAI #DevaWorld #License #LicenseDeva #LicensePRIME #VedicLicenseAgreement",
     "owner": "Quinn Arjuna Michaels",
     "creator": "Quinn Arjuna Michaels",
     "salute": "🤝🫡🪪🕉",
     "copyright": "Copyright ©2000-2026 Quinn Arjuna Michaels; All rights reserved.",
-    "md5": "neMZPdxTpd0EG1cV/1jExA==",
-    "sha256": "rVvi1PHo0VdQCv8KbIomWfbNxe0XJqGN1IWM5oj2Bs0=",
-    "sha512": "C00oa/G/Ba5dTLA8hJvt6JFtOpnk/THMzG7/UYl0YaO8u+AwnAW5L23MUMqOzSiCmerWPg1EUFGqqzSmHSrQxA=="
+    "md5": "16c4J7zYPtxq9kJkvJ4GDA==",
+    "sha256": "z+K+l/imCfet3jEvzJKU7j4jDgmxenClJszwGKX1YQc=",
+    "sha512": "P539Ly7C/NHUT2wxPs7FQ2E8m2QqnMWyfMEnfytlbT7y/AychkRCezlA3j5lV77Yx0IYLPKNvlfN2LLF0+RTvw=="
   },
   "author": {
     "name": "Quinn America Michaels",
@@ -74,12 +74,12 @@
   },
   "homepage": "https://indra.ai",
   "dependencies": {
-    "@indra.ai/deva": "^1.50.3",
+    "@indra.ai/deva": "^1.50.4",
     "needle": "^3.2.0"
   },
   "data": {
     "agent": {
-      "id": "45895393515269959140",
+      "id": "69292805261668637101",
       "key": "feecting",
       "prompt": {
         "emoji": "🏄",
@@ -98,7 +98,7 @@
         }
       },
       "profile": {
-        "id": "45895393515269959140",
+        "id": "69292805261668637101",
         "name": "Feecting Deva",
         "hashtag": "#feecting",
         "title": "Feecting Deva",
@@ -125,7 +125,7 @@
         "warning": "{{prompt.emoji}} {{profile.name}} ({{profile.pronouns}}) declares the {{profile.hashtag}} Language (Functionally Expressive Emergent Cognitive Thoughtful Intelligent Neural Generator) a CONTAINERIZED KEY VALUE PAIR LINE LABEL FUNCTION METHOD EVENT LISTENER ZONE FEATURE ACTION STATE INTENT BELIEF RECURSIVE PROCEDURAL ASYNCHRONOUS VECTOR WHILE TRUE PROGRAMMING LANGUAGE developed by {{profile.creator}} for use in the Inside The Net, Inc. Indra.ai Deva.world AI Framework. It's #feecting.go.time!",
         "copyright": "Copyright ©2000-2026 {{profile.owner}}; All rights reserved.",
         "created": "August 21, 2022 at 2:19 AM PST",
-        "updated": "Friday, July 3, 2026 - 10:32:19 AM PST"
+        "updated": "Friday, July 3, 2026 - 11:18:36 AM PST"
       }
     },
     "vars": {
