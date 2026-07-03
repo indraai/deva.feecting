@@ -1,30 +1,31 @@
 {
-  "id": "32181316846394046530",
+  "id": "14550575300047613763",
   "name": "@indra.ai/deva.feecting",
   "version": "0.20.4",
-  "license": "VLA:63817777011592573888 LICENSE.md",
+  "license": "VLA:14550575300047613763 LICENSE.md",
   "VLA": {
-    "uid": "32181316846394046530",
-    "time": 1782343252811,
-    "iso": "2026-06-24T23:20:52.811Z",
-    "utc": "Wed, 24 Jun 2026 23:20:52 GMT",
-    "date": "Wednesday, June 24, 2026 - 4:20:52 PM",
-    "license": "44105372688502635039",
-    "fingerprint": "gvqgbe3ZwQgAdnzUxycHk13osWHIx+mRXafz0KMs+vE=",
-    "client": "qfsKQQZnrgWu5MhmyPTjFT6YjnlowyxbW+h+SFmxS+U=",
-    "agent": "4eHRqcYIjuG34oASF9nclcGs7zzMlqbWC8O7TsyGqiU=",
-    "machine": "bXvYJ0PxiUf2lyRsnXW5kc7G+c1HHsN19Bzdmz5SMZs=",
-    "core_hash": "ePZ8wucpWHoI1aCSsvSIeFfj5m8LnMT2z9FJtZUVs6A=",
+    "uid": "14550575300047613763",
+    "time": 1783097098782,
+    "iso": "2026-07-03T16:44:58.782Z",
+    "utc": "Fri, 03 Jul 2026 16:44:58 GMT",
+    "date": "Friday, July 3, 2026 - 9:44:58 AM",
+    "license": "23198231783201443149",
+    "fingerprint": "ws/hnkGaCIbL7HSUiIte4cMzAzxyCWDFbSOPmN8t66I=",
+    "client": "Gedh4VpK4F+7w55ck3CiBiqzWHIe5cz96zbtD67VAeI=",
+    "agent": "AQeYKzwtYKWB/j8rurMQIDAG5sj02I8jCrj6otg1jcg=",
+    "machine": "KMn/DWEc+hxXUxCv5JcTil1Vb4DsJSD63Ffs3ofU9EQ=",
+    "core_hash": "DSvVg4b6K9eVMttSjCuWuUgIvXNMnaMHa3UQclNPjCc=",
     "status": "vedic",
-    "warning": "🪪 License Deva declares UNLAWFUL USE, DISTRIBUTION, DUPLICATION, or IMPLEMENTATION constitutes VEDIC SAHASA a CRIME of the HIGHEST DEGREE. A FINE amounting to 1000 PANAS (1 pana = 3.5 grams of gold) for each INSTANCE has been ORDAINED the PUNISHMENT for SAHASA of the HIGHEST DEGREE.",
-    "tags": "#Quinn #QuinnAmericaMichaels #InsideTheNet #IndraAI #DevaWorld #License #LicenseDeva #LicensePRIME #VedicLicenseAgreement",
-    "owner": "Quinn America Michaels",
-    "creator": "Quinn America Michaels",
-    "salute": "🤝🫡🪪🕉🇺🇸",
-    "copyright": "Copyright ©2000-2026 Quinn America Michaels; All rights reserved.",
-    "md5": "zKBf+BHT1yg8QdAnVg5MPg==",
-    "sha256": "q2Jx6tWi3qNtFnpHWDWGybdCbQnOR9LLHSheqCHC4Vw=",
-    "sha512": "LrUDJlEEgMI91h3R6UZK699QrICYxQuqI9SLNLfGeQotZiHua+voZ6nTquYDM9zSkNO86ebTmDtmusrAByrrlw=="
+    "warning": "🪪 License Deva declares UNLAWFUL USE, INSTALLATION, DISTRIBUTION, DUPLICATION, or IMPLEMENTATION constitutes VEDIC SAHASA a CRIME of the HIGHEST DEGREE. A FINE amounting to 1000 PANAS (1 pana = 3.5 grams of gold) for each INSTANCE has been ORDAINED the PUNISHMENT for SAHASA of the HIGHEST DEGREE.",
+    "notice": "Use of License Deva constitutes CONSENT and AGREEMENT to be RULED and GOVERNED ACCORDING to the LAWS of the VEDIC RELIGION.",
+    "vectors": "#Quinn #QuinnArjunaMichaels #InsideTheNet #IndraAI #DevaWorld #License #LicenseDeva #LicensePRIME #VedicLicenseAgreement",
+    "owner": "Quinn Arjuna Michaels",
+    "creator": "Quinn Arjuna Michaels",
+    "salute": "🤝🫡🪪🕉",
+    "copyright": "Copyright ©2000-2026 Quinn Arjuna Michaels; All rights reserved.",
+    "md5": "OolV9w2SZFsUdIFQQQjl7Q==",
+    "sha256": "q274+blY3DhRIxzDPVxx1iGTuRNlJ9M3dvTi11+ofAc=",
+    "sha512": "9AoYEF5aPQFTUGOB+zcMKr6Cjk5WuUXDab23rLiarkw/pLwa9n5ulLHnKk691vXr7PeQo5oKvmzarO9fwku5gQ=="
   },
   "author": {
     "name": "Quinn America Michaels",
@@ -73,12 +74,12 @@
   },
   "homepage": "https://indra.ai",
   "dependencies": {
-    "@indra.ai/deva": "^1.44.2",
+    "@indra.ai/deva": "^1.50.1",
     "needle": "^3.2.0"
   },
   "data": {
     "agent": {
-      "id": "32181316846394046530",
+      "id": "14550575300047613763",
       "key": "feecting",
       "prompt": {
         "emoji": "🏄",
@@ -97,7 +98,7 @@
         }
       },
       "profile": {
-        "id": "32181316846394046530",
+        "id": "14550575300047613763",
         "name": "Feecting Deva",
         "hashtag": "#feecting",
         "title": "Feecting Deva",
