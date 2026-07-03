@@ -1,9 +1,9 @@
 "use strict"
 // Feecting Deva Parser
-// Copyright ©2000-2026 Quinn A Michaels; All rights reserved. 
-// Owner Signature Required For Lawful Use.
-// Distributed under VLA:63817777011592573888 LICENSE.md
-// Sunday, January 4, 2026 - 8:37:21 AM
+// Copyright ©2000-2026 Quinn Arjuna Michaels; All rights reserved.  
+// Owner Signature Required For Lawful Use.  
+// Distributed under VLA:69292805261668637101 LICENSE.md  
+// Friday, July 3, 2026 - 11:18:36 AM PST
 
 import fs from 'node:fs';
 import path from 'node:path';
