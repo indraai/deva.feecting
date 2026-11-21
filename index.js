@@ -152,13 +152,6 @@ const FeectingDeva = new Deva({
       return this.func.get(packet);
     },
   },
-  onInit(data, resolve) {
-    const {personal} = this.license(); // get the license config
-    const agent_license = this.info().VLA; // get agent license
-    const license_check = this.license_check(personal, agent_license); // check license
-    // return this.start if license_check passes otherwise stop.
-    return license_check ? this.start(data, resolve) : this.stop(data, resolve);
-  }, 
   onReady(data, resolve) {
     const {VLA} = this.info();
     this.prompt(`${this.vars.messages.ready} > VLA:${VLA.uid}`);
@@ -166,7 +159,6 @@ const FeectingDeva = new Deva({
   },
   onError(err, data, reject) {
     this.prompt(this.vars.messages.error);
-    console.log(err);
     return reject(err);
   }
 });
